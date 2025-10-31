@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto PC Streaming - Grupo 69</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #E0F2F1 0%, #FAFAFA 100%);
+            color: #2c3e50;
+            text-align: justify;
+        }
+        .container {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 137, 123, 0.15);
+        }
+        header {
+            text-align: center;
+            border-bottom: 3px solid #80CBC4;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #00897B;
+            font-size: 2.4em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #00897B;
+            border-left: 5px solid #80CBC4;
+            font-size: 2.0em;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #088a74; /* un poco más oscuro para diferenciarlo del h2 */
+            font-size: 1.5em; /* más grande que h4 */
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        h4 {
+            color: #00796B; /* color más suave */
+            font-size: 1.2em;
+            font-style: italic; /* cursiva */
+            margin-top: 15px;
+        }
+
+
+        .integrante-section {
+            border: 2px solid #80CBC4;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            background-color: #F9FFFE;
+        }
+        .integrante-nombre {
+            color: #00897B;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #80CBC4;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #FAFAFA;
+        }
+        table, th, td {
+            border: 1px solid #80CBC4;
+        }
+        th {
+            background-color: #80CBC4;
+            color: #fff;
+            padding: 12px;
+            font-weight: bold;
+        }
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+        tr:hover {
+            background-color: #E0F2F1;
+        }
+        .highlight {
+            background-color: #E0F2F1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #00897B;
+        }
+        .info-box {
+            background-color: #E0F2F1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #80CBC4;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #80CBC4;
+            font-size: 0.9em;
+            color: #546e7a;
+        }
+        .universidad {
+            font-size: 0.9em;
+            color: #546e7a;
+            margin-bottom: 5px;
+        }
+        .total {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #00897B;
+        }
+        strong {
+            color: #00695C;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 137, 123, 0.2);
+        }
+
+        .galeria-ia {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* espacio entre imágenes */
+            flex-wrap: wrap; /* por si la pantalla es más chica, que se acomoden */
+        }
+
+        .galeria-ia img {
+          width: 30%; /* cada una ocupa un tercio */
+          max-width: 300px; /* límite opcional */
+          margin: 0; /* anulamos el margin auto del img global */
+        }
+
+        .imagenes-iguales {
+          display: block;
+          justify-content: center; /* centra las imágenes */
+          gap: 20px; /* espacio entre ellas */
+        }
+
+        .imagenes-iguales img {
+          width: 800px;     /* ajustá el tamaño que prefieras */
+          height: auto;     /* mantiene proporción original */
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0, 137, 123, 0.2);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER GRUPAL - Carátula única del grupo -->
+        <header>
+            <p class="universidad">Universidad Autónoma de Entre Ríos</p>
+            <p class="universidad">Facultad de Ciencia y Tecnología</p>
+            <h1>Trabajo Práctico N° 1</h1>
+            <h2>"Streaming de videojuegos"</h2>
+            <p class="universidad">Cátedra: Fundamentos de Computación</p>
+            <p class="universidad">Profesores: Bioing. Ismael Cassi (ADJ), Lic. Paolo Orundés Cardinali (JTP)</p>
+            <p><strong>Integrantes del Grupo:</strong> Schumacher Nahuel, Bifiger Iara, Frutos Santino, Villalba Ezequiel</p>
+            <p><strong>Comisión:</strong> 2</p>
+            <p><strong>Fecha de Entrega:</strong> 31 de octubre de 2025</p>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- SECCIONES COMUNES DEL GRUPO (UNA SOLA VEZ) -->
+        <!-- ============================================ -->
+        
+        <section id="introduccion">
+            <h2>El juego que elegimos como grupo para streamear es el FORTNITE</h2>
+            <p>Fortnite es un juego de acción multijugador donde hasta 100 jugadores caen en una isla con el objetivo de ser el último en pie. Se combina disparos en tercera persona con construcción rápida de estructuras para cubrirse, atacar o escapar. Las partidas son intensas y llenas de acción, con la zona segura que se va reduciendo constantemente, lo que genera combates estratégicos y momentos impredecibles.</p>
+            <p>Para streaming, es perfecto: cada partida puede tener jugadas creativas, enfrentamientos épicos y situaciones inesperadas que capturan la atención de los espectadores, convirtiéndolo en un espectáculo visual entretenido y dinámico.</p>
+        </section>
+
+        <section id="requerimientos">
+            <h2>Requerimientos del sistema de Fortnite</h2>
+            <h3>Mínimos:</h3>
+            <ul>
+                <li>Sistema operativo: Windows 10 de 64 bits, versión 1703</li>
+                <li>CPU: Core i3-3225 de 3,3 GHz</li>
+                <li>Memoria: 8 GB de RAM</li>
+                <li>GPU: Intel HD 4000 en PC, AMD Radeon Vega 8</li>
+            </ul>
+            <h3>Recomendados:</h3>
+            <ul>
+                <li>Sistema operativo: Windows 10/11 de 64 bits</li>
+                <li>CPU: Core i5-7300U de 3,5 GHz, AMD Ryzen 3 3300U o equivalente</li>
+                <li>Memoria: 16 GB de RAM o superior</li>
+                <li>GPU: GPU con DX11 equivalente a NVIDIA GTX 960 o AMD R9 280</li>
+                <li>Adicional: SSD NVMe</li>
+            </ul>
+            <h3>Requerimientos para jugar y transmitir en vivo:</h3>
+            <ul>
+                <li>Gráfica: GTX 1660 Super 6GB VRAM</li>
+                <li>RAM: 16GB</li>
+                <li>Procesador: i3 10100F</li>
+                <li>S.O.: Windows 11 64 bits</li>
+            </ul>
+        </section>
+
+        <section id="comparacion">
+            <h2>Comparación entre los juegos</h2>
+            <p>Para estas comparaciones se utilizarán los componentes recomendados para una experiencia de juego satisfactoria.</p>
+
+            <h3>FORTNITE</h3>
+            <ul>
+                <li>SO: Windows 10/11 de 64 bits</li>
+                <li>Procesador: Core i5-7300U de 3,5 GHz, AMD Ryzen 3 3300U o equivalente</li>
+                <li>Memoria: 16 GB de RAM o superior</li>
+                <li>Gráficos: GPU con DX11 equivalente a NVIDIA GTX 960 o AMD R9 280</li>
+                <li>Red: Conexión de banda ancha a Internet</li>
+                <li>Almacenamiento: Entre 40 GB y 66 GB de espacio disponible</li>
+            </ul>
+            <div class="imagenes-iguales">
+              <img src="Imagenes/Fornite.jpg" alt="Fortnite">
+              <img src="Imagenes/Fornite2.jpg" alt="Fortnite">
+            </div>
+
+            <h3>COUNTER-STRIKE 2</h3>
+            <ul>
+                <li>SO: Windows 10/11 de 64 bits (con la última actualización)</li>
+                <li>Procesador: AMD Ryzen 5 (3600, 5500, 5600)</li>
+                <li>Memoria: 16 GB de RAM</li>
+                <li>Gráficos: NVIDIA® GeForce® GTX 1060 o AMD Radeon™ RX 580</li>
+                <li>Red: Conexión de banda ancha a Internet</li>
+                <li>Almacenamiento: 85 GB de espacio disponible</li>
+            </ul>
+            <div class="imagenes-iguales">
+              <img src="Imagenes/counter.jpg" alt="Counter Strike 2">
+            </div>
+
+            <h3>COD: WARZONE</h3>
+            <ul>
+                <li>SO: Windows 10/11 de 64 bits (con la última actualización)</li>
+                <li>Procesador: Intel® Core™ i5-6600K / Core™ i7-4770 o AMD Ryzen™ 5 1400</li>
+                <li>Memoria: 12 GB de RAM</li>
+                <li>Gráficos: NVIDIA® GeForce® GTX 1060 o AMD Radeon™ RX 580</li>
+                <li>Red: Conexión de banda ancha a Internet</li>
+                <li>Almacenamiento: 125 GB de espacio disponible</li>
+            </ul>
+            <div class="imagenes-iguales">
+              <img src="Imagenes/warzone.jpg" alt="Call of Duty: Warzone">
+            </div>
+
+            <h2>Comparando los requisitos:</h2>
+            <p><strong>Fortnite</strong> es el más liviano de los tres: pide una GPU GTX 960, procesador i5 de 7ª gen y ocupa menos espacio (40-66 GB).</p>
+            <p><strong>Counter-Strike 2</strong> pide más que Fortnite: GTX 1060/RX 580, Ryzen 5 y 85 GB, siendo un poco más exigente.</p>
+            <p><strong>Call of Duty: Warzone</strong> es el más pesado: requiere buen CPU (i5-6600K o superior), GPU GTX 1060/RX 580 y ocupa 125 GB, siendo el que más espacio y potencia gráfica necesita.</p>
+
+            <h2>Conclusión:</h2>
+            <p>Hemos elegido Fortnite como el juego para streamear ya que es relativamente leve en cuanto a los componentes necesarios, y además es un juego que es bastante popular hoy día y mucha gente lo juega y consume contenido de este juego.</p>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECCIÓN INDIVIDUAL: EZEQUIEL -->
+        <!-- ============================================ -->
+        
+        <div class="integrante-section">
+            <div class="integrante-nombre">📋 Presupuesto de Ezequiel Villalba</div>
+            
+            <h2>DISEÑO DE UNA PC ECONÓMICA PARA GAMING Y STREAMING</h2>
+            <p>Este Trabajo tiene como objetivo construir una computadora de
+            escritorio capaz de ejecutar y transmitir videojuegos de manera fluida,
+            respetando un presupuesto máximo de 1000 dólares. Se busca mantener un
+            equilibrio entre rendimiento, costo y estabilidad, incluyendo todos los
+            periféricos necesarios para realizar streaming en plataformas como kick,
+            Twitch o YouTube.</p>
+            <h2>Selección del videojuego:</h2>
+            <p><strong>Juego elegido:</strong> Fortnite</p>
+            <p><strong>Género:</strong> Battle Royale y construcción.</p>
+            <p><strong>Modo de juego:</strong> multijugador en línea.</p>
+            <p><strong>Popularidad:</strong> uno de los títulos más reconocidos y
+            jugados a nivel mundial, ideal para crear contenido en streaming.</p>
+            <p>Fortnite combina acción, estrategia y creatividad, lo que lo convierte en un juego atractivo tanto para jugadores casuales como para
+            streamers que buscan interactuar con su audiencia. 100 jugadores caen en
+            una isla con el objetivo de ser el último en pie. Se combina disparos en
+            tercera persona con construcción rápida de estructuras para cubrirse,
+            atacar o escapar. Las partidas son intensas y llenas de acción, con la
+            zona segura que se va reduciendo constantemente, lo que genera combates
+            estratégicos y momentos impredecibles.</p>
+            <h2>Requerimientos del sistema y comparación de juegos:</h2>
+            <h3>Requerimientos del
+            sistema de Fortnite</h3>
+            <h4>Mínimos (para poder jugar):</h4>
+            <p><strong>Sistema operativo:</strong> Windows 10 de 64 bits (versión
+            1703 o superior)</p>
+            <p><strong>Procesador (CPU):</strong> Intel Core i3-3225 (3.3 GHz) o
+            equivalente</p>
+            <p><strong>Memoria RAM:</strong> 8 GB</p>
+            <p><strong>Gráficos (GPU):</strong> Intel HD 4000 o AMD Radeon Vega
+            8</p>
+            <p><strong>Almacenamiento</strong>: 40–66 GB disponibles</p>
+            <p>Con estos requisitos el juego puede ejecutarse, aunque con calidad
+            baja y FPS limitados (alrededor de 30-40 FPS). No es ideal para
+            streaming ni para jugar de forma competitiva.</p>
+            <h4>Recomendados
+            (para una buena experiencia de juego):</h4>
+            <p><strong>Sistema operativo:</strong> Windows 10/11 de 64 bits</p>
+            <p><strong>Procesador:</strong> Intel Core i5-7300U o AMD Ryzen 3
+            3300U</p>
+            <p><strong>Memoria RAM:</strong> 16 GB</p>
+            <p><strong>Gráficos:</strong> NVIDIA GTX 960 o AMD R9 280</p>
+            <p><strong>Almacenamiento:</strong> SSD NVMe recomendado</p>
+            <p>Con esta configuración el juego corre de forma fluida, alcanzando
+            entre 80 y 120 FPS en calidad media/alta. Es una base adecuada para
+            luego transmitir.</p>
+            <h4>Requisitos para
+            jugar y transmitir en vivo:</h4>
+            <p><strong>Procesador:</strong> Intel Core i3-10100F o AMD Ryzen 5
+            3600</p>
+            <p><strong>Gráficos:</strong> NVIDIA GTX 1660 Super (6 GB VRAM)</p>
+            <p><strong>Memoria RAM:</strong> 16 GB</p>
+            <p><strong>Sistema operativo:</strong> Windows 11 de 64 bits</p>
+            <p><strong>Software adicional:</strong> OBS Studio para streaming</p>
+            <p>Esta configuración permite jugar a Fortnite y transmitir
+            simultáneamente en 1080p/60 FPS, manteniendo estabilidad y buena calidad
+            de imagen.</p>
+            <p>El uso de la codificación por hardware (NVENC) libera al procesador
+            durante la transmisión, lo cual resulta ideal dentro de un presupuesto
+            limitado.</p>
+            <h3>COMPARACIÓN ENTRE LOS JUEGOS</h3>
+            <p>Para estas comparaciones se utilizarán los componentes recomendados
+            para una experiencia de juego satisfactoria. Esta información fue
+            extraída de steam y epic games.</p>
+            <h4>FORTNITE</h4>
+            <p><strong>SO:</strong> Windows 10/11 de 64 bits</p>
+            <p><strong>Procesador:</strong> Core i5-7300U de 3,5 GHz, AMD Ryzen 3
+            3300U o equivalente</p>
+            <p><strong>Memoria:</strong> 16 GB de RAM o superior</p>
+            <p><strong>Gráficos:</strong> GPU con DX11 equivalente a NVIDIA GTX 960
+            o AMD R9 280</p>
+            <p><strong>Red:</strong> Conexión de banda ancha a Internet</p>
+            <p><strong>Almacenamiento:</strong> Entre 40 GB y 66 GB de espacio
+            disponible</p>
+            <h4>COUNTER-STRIKE 2</h4>
+            <p><strong>SO:</strong> Windows 10 de 64 bits (con la última
+            actualización) o Windows 11 de 64 bits (con la última actualización)</p>
+            <p><strong>Procesador:</strong> AMD Ryzen 5 (3600, 5500, 5600)</p>
+            <p><strong>Memoria:</strong> 16 GB de RAM</p>
+            <p><strong>Gráficos:</strong> NVIDIA® GeForce® GTX 1060 o AMD Radeon™ RX
+            580</p>
+            <p><strong>Red:</strong> Conexión de banda ancha a Internet</p>
+            <p><strong>Almacenamiento:</strong> 85 GB de espacio disponible</p>
+            <h4>COD: WARZONE</h4>
+            <p><strong>SO:</strong> Windows 10 de 64 bits (con la última
+            actualización) o Windows 11 de 64 bits (con la última actualización)</p>
+            <p><strong>Procesador:</strong> Intel® Core™ i5-6600K / Core™ i7-4770 o
+            AMD Ryzen™ 5 1400</p>
+            <p><strong>Memoria:</strong> 12 GB de RAM</p>
+            <p><strong>Gráficos:</strong> NVIDIA® GeForce® GTX 1060 o AMD Radeon™ RX
+            580</p>
+            <p><strong>Red</strong>: Conexión de banda ancha a Internet</p>
+            <p><strong>Almacenamiento:</strong> 125 GB de espacio disponible</p>
+            <h3>Análisis comparativo</h3>
+            <p><strong>Fortnite</strong> es el más ligero y accesible. Su motor
+            gráfico permite ajustar texturas y efectos para adaptarse a casi
+            cualquier PC. Su bajo consumo de recursos lo convierte en una excelente
+            opción para quienes quieren iniciar en el streaming con hardware
+            económico.</p>
+            <p><strong>Counter-Strike 2</strong> eleva la exigencia técnica respecto
+            al clásico CS:GO. Si bien es menos pesado que Warzone, demanda mayor
+            estabilidad de CPU para mantener FPS altos en partidas competitivas.</p>
+            <p><strong>Call of Duty: Warzone</strong> es el más pesado: requiere GPU
+            de gama media-alta, más potencia de procesador y gran espacio en disco.
+            No es viable para un equipo de menos de 1000 USD si se busca jugar y
+            transmitir con fluidez.</p>
+            <h3>Conclusión de la comparación</h3>
+            <p>Tras analizar los tres títulos, se determinó que Fortnite es la
+            opción más equilibrada. Combina buena optimización, amplia comunidad,
+            bajo consumo de recursos y permite realizar transmisiones en 720p o
+            1080p con hardware accesible. Por estas razones, Fortnite fue el juego
+            seleccionado para el desarrollo del proyecto.</p>
+            <h2>Elección de componentes del
+            equipo:</h2>
+            <p>Para cumplir los requisitos (jugar Fortnite y transmitir en
+            simultáneo) se ha optado por una PC de escritorio por su mejor relación
+            costo / rendimiento y su capacidad de actualización futura.</p>
+            <p>El objetivo fue seleccionar componentes que permitan jugar Fortnite
+            con alta fluidez y, al mismo tiempo, transmitir usando codificación por
+            hardware (NVENC) o por CPU según convenga, manteniéndose dentro del
+            presupuesto objetivo (1000 USD cambio a pesos de $1457,73ars). También
+            se incorporan periféricos esenciales como teclado, ratón, monitor,
+            micrófono, cámara y estabilizador.</p>
+            <h3>Componentes principales</h3>
+            <table>
+            <colgroup>
+            <col style="width: 18%" />
+            <col style="width: 27%" />
+            <col style="width: 19%" />
+            <col style="width: 13%" />
+            <col style="width: 21%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>Componente</th>
+            <th>Modelo Seleccionado</th>
+            <th>Especificaciones</th>
+            <th>Precio $(Ars)</th>
+            <th>Fuente</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Procesador (CPU)</td>
+            <td>Amd Ryzen 5 5600x C/cooler</td>
+            <td>En la sección de justificación</td>
+            <td>$236.283</td>
+            <td><a href="thegamershop.com.ar" target="_blank">thegamershop.com.ar</a></td>
+            </tr>
+            <tr class="even">
+            <td>Placa Madre</td>
+            <td>Motherboard Asus B550-F ROG Strix GAMING WIFI II AM4</td>
+            <td>En la sección de justificación</td>
+            <td>$352.600</td>
+            <td><a href="www.maximus.com.ar" target="_blank">www.maximus.com.ar</a></td>
+            </tr>
+            <tr class="odd">
+            <td>Tarjeta Gráfica</td>
+            <td>VIDEO GeForce RTX 3050 6GB ASUS DUAL OC</td>
+            <td>En la sección de justificación</td>
+            <td>$331.739,89</td>
+            <td><a href="fullh4rd.com.ar" target="_blank">fullh4rd.com.ar</a></td>
+            </tr>
+            <tr class="even">
+            <td>Memoria RAM</td>
+            <td>MEMORIA 16GB DDR4 3200 HIKSEMI ARMOR WHITE</td>
+            <td>En la sección de justificación</td>
+            <td>$60.739,47</td>
+            <td><a href="fullh4rd.com.ar" target="_blank">fullh4rd.com.ar</a></td>
+            </tr>
+            <tr class="odd">
+            <td>Almacenamiento</td>
+            <td>Disco Solido Ssd M2 Pci-E Nvme 1Tb Aimerican Agility</td>
+            <td>En la sección de justificación</td>
+            <td>$84.999</td>
+            <td><a href="www.mexx.com.ar" target="_blank">www.mexx.com.ar</a></td>
+            </tr>
+            <tr class="even">
+            <td>Fuente de Poder</td>
+            <td>FUENTE AUREOX ARXGU 650W 80 PLUS BRONZE</td>
+            <td>En la sección de justificación</td>
+            <td>$81.211,14</td>
+            <td><a href="fullh4rd.com.ar" target="_blank">fullh4rd.com.ar</a></td>
+            </tr>
+            <tr class="odd">
+            <td>Gabinete</td>
+            <td>GABINETE EAGLE WARRIOR CG 20AA 4FAN ARGB ATX</td>
+            <td>En la sección de justificación</td>
+            <td>$53.834,99</td>
+            <td><a href="fullh4rd.com.ar" target="_blank">fullh4rd.com.ar</a></td>
+            </tr>
+            <tr class="even">
+            <td>UPS</td>
+            <td>Ups Trv 650A Neo</td>
+            <td>En la sección de justificación</td>
+            <td>$ 85.679</td>
+            <td><a href="www.venex.com.ar" target="_blank">www.venex.com.ar</a></td>
+            </tr>
+            <tr class="odd">
+            <td>Periféricos</td>
+            <td>Combo Gamer Genius GX Auri+Teclado+Mouse</td>
+            <td>En la sección de justificación</td>
+            <td>$ 58.799</td>
+            <td><a href="www.venex.com.ar" target="_blank">www.venex.com.ar</a></td>
+            </tr>
+            <tr class="even">
+            <td>Webcam</td>
+            <td>Webcam Logitech C920s 1080p HD Stereo C/Tapa</td>
+            <td>En la sección de justificación</td>
+            <td>$ 130.199</td>
+            <td><a href="www.venex.com.ar" target="_blank">www.venex.com.ar</a></td>
+            </tr>
+            <tr class="odd">
+            <td>Monitor</td>
+            <td>Monitor SolarMax 22″</td>
+            <td>En la sección de justificación</td>
+            <td>$143.759</td>
+            <td><a href="www.fravega.com" target="_blank">thegamershop.com.ar</a></td>
+            </tr>
+            <tr class="even">
+            <td>Licencia de Windows</td>
+            <td>Microsoft Windows 10 OEM Home Key GLOBAL</td>
+            <td>En la sección de justificación</td>
+            <td>$17.383,37</td>
+            <td><a href="www.eneba.com" target="_blank">www.eneba.com</a></td>
+            </tr>
+            <tr class="odd">
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td>$1.556.015,72</td>
+            <td>$1067,43USD</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4>Observación:</h4>
+            <p>El presupuesto supera los $1000USD del presupuesto permitido por
+            $67,43USD.</p>
+            <h3>Justificación de componentes:</h3>
+            <h4>Procesador (CPU) — AMD Ryzen 5 5600X (con cooler)</h4>
+            <p><strong>Especificaciones
+            clave</strong></p>
+            <p><strong>Arquitectura:</strong> Zen 3.</p>
+            <p><strong>Núcleos / Hilos:</strong> 6 núcleos / 12 hilos.</p>
+            <p><strong>Frecuencia base / boost:</strong> ≈ 3.7 GHz base / hasta 4.6
+            GHz boost.</p>
+            <p><strong>Caché</strong> L3: 32 MB.</p>
+            <p><strong>TDP:</strong> ~65 W.</p>
+            <p><strong>Incluye cooler:</strong> Air cooler.</p>
+              <img src= "Imagenes/Procesador AMD.PNG" alt="Procesador">
+            <p><strong>Justificación</strong></p>
+            <p>Excelente rendimiento por núcleo y buen rendimiento multinúcleo para
+            tareas de juego + streaming. Con 6/12 hilos manejan bien OBS y otras
+            tareas al mismo tiempo. Es una opción con muy buena relación
+            precio/rendimiento para gaming en 1080p y transcodificación ligera. Su
+            bajo TDP facilita elección de fuente y refrigeración.</p>
+            <h4>Placa
+            Madre — ASUS ROG Strix B550-F Gaming WiFi II (AM4)</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Chipset:
+            B550</strong> (soporte Ryzen 3000/5000).</p>
+            <p>Factor: ATX.</p>
+            <p><strong>Soporte PCIe 4.0</strong> en CPU/slots adecuados.</p>
+            <p><strong>VRM de calidad</strong> para overclock
+            ligero/estabilidad.</p>
+            <p><strong>Conectividad:</strong> Wi-Fi integrado, múltiples puertos
+            USB, M.2 NVMe, soporte para 4 módulos de RAM.</p>
+              <img src="Imagenes/Placa Madre Cara.PNG" alt="Placa Madre">
+            <p><strong>Justificación:</strong></p>
+            <p>Placa de gama media-alta: estabilidad, buenas fases de alimentación
+            (VRM) y conectividad avanzada. Ideal si pensás actualizar CPU/GPU en el
+            futuro (soporte PCIe4, ranuras M.2). El Wi-Fi integrado y el ecosistema
+            ROG facilitan opciones de expansión y una experiencia “lista para
+            gaming”.</p>
+            <h4>Tarjeta
+            Gráfica (GPU) — GeForce RTX 3050 6GB ASUS DUAL OC</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Arquitectura</strong>: Ampere (NVIDIA).</p>
+            <p><strong>Memoria</strong>: modelo listado como 6 GB</p>
+            <p><strong>Soporte:</strong> NVENC actualizado, soporte para DLSS,
+            trazado de rayos básico. Orientada a 1080p gaming con buenos fps en
+            muchos títulos.</p>
+              <img src="Imagenes/RTX 3050.PNG" alt="RTX">
+            <p><strong>Justificación</strong></p>
+            <p>NVENC permite codificar el streaming con alta calidad sin cargar la
+            CPU (clave para jugar + transmitir). Rendimiento en 1080p estable en
+            Fortnite y otros juegos competitivos; buena relación precio/rendimiento
+            para un build de ~1000 USD.</p>
+            <h4>Memoria RAM — HIKSEMI Armor White DDR4 3200 MHz (16 GB) </h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Modelo</strong> HS-UDIMM-ARMOR-WHITE</p>
+            <p><strong>Capacidad</strong> 16GB</p>
+            <p><strong>Interface</strong> DDR4 - 3200MHz</p>
+            <p><strong>Pin</strong> 288pin</p>
+            <p><strong>Tamaño</strong> (L×A×A mm) 133.25*31.25*1.4</p>
+            <p><strong>Temperatura de Trabajo</strong> 0 °C to 85 °C</p>
+            <p><strong>Peso</strong> 15g</p>
+              <<img src="Imagenes/Memoria RAM.PNG" alt="Ram">
+            <p><strong>Justificación</strong></p>
+            <p>Ofrece un excelente equilibrio entre velocidad, capacidad y precio.
+            Los 16 GB garantizan un rendimiento fluido en tareas de edición, gaming
+            y streaming, mientras que la frecuencia de 3200 MHz asegura buena
+            compatibilidad con plataformas AMD.</p>
+            <h4>Almacenamiento — SSD M.2 NVMe 1 TB (American Agility)</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Marca:</strong> Aimerican</p>
+            <p><strong>Línea:</strong> Agility</p>
+            <p><strong>P/N:</strong> AISSD1TBNVM3</p>
+            <p><strong>UPC/EAN:</strong> 850073872031</p>
+            <p><strong>Capacidad:</strong> 1 TB</p>
+            <p><strong>Interfaces:</strong> PCIe NVMe 3.0</p>
+            <p><strong>Factor de formato:</strong> M.2 2280</p>
+            <p><strong>Aplicaciones:</strong> PC/Notebooks</p>
+            <p><strong>Ubicación del disco:</strong> Interno</p>
+              <img src="Imagenes/SSD 1TB.PNG" alt="SSD">
+            <p><strong>Justificación</strong></p>
+            <p>Mejora dramática en tiempos de arranque, carga de juegos y manejo de
+            grabaciones/archivos de streaming. 1 TB es aconsejable si vas a instalar
+            varios juegos grandes y guardar grabaciones.</p>
+            <h4>Fuente de poder
+            (PSU) — Aureox ARXGU 650W 80+ Bronze</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Potencia:</strong> 650 W.</p>
+            <p><strong>Certificación:</strong> 80+ Bronze (eficiencia
+            aceptable).</p>
+            <p><strong>Conectores:</strong> ATX 24-pin, EPS 8-pin CPU, PCIe 6/8-pin
+            (según modelo).</p>
+              <img src="Imagenes/Fuente de Poder.PNG" alt="Fuente de poder">
+            <p><strong>Justificación</strong></p>
+            <p>650 W provee margen para la RTX 3050 y futuros upgrades (más de 20–30
+            % de margen sobre consumo típico). Certificación Bronze asegura
+            eficiencia y menos desperdicio energético; importante para estabilidad y
+            vida de componentes.</p>
+            <h4>Gabinete — Eagle
+            Warrior CG 20AA (4 fans ARGB) ATX</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Tipo:</strong> Gaming Case</p>
+            <p><strong>Material del Chasis:</strong> Metal SPCC de 0.45 mm, pintura
+            Negra</p>
+            <p><strong>Panel Frontal:</strong> Hierro con orificios</p>
+            <p><strong>Color:</strong> Negro</p>
+            <p><strong>Panel Lateral Izquierdo:</strong> Vidrio Templado</p>
+            <p><strong>Soporte de Placa Base
+            (M/B):</strong> ATX / micro ATX / ITX</p>
+            <p><strong>Panel Frontal E/S:</strong></p>
+            <p>USB 3.0 x 1</p>
+            <p>USB 2.0 x 2</p>
+            <p>HD Audio</p>
+            <p><strong>Bahías de Unidad:</strong></p>
+            <p>3.5" HDD x 2</p>
+            <p>2.5" SSD x 1</p>
+            <p><strong>Ranuras de Expansión:</strong> 7 PCS</p>
+            <p><strong>Longitud Máxima de Tarjeta Gráfica (VGA):</strong> 310 mm</p>
+            <p><strong>Altura Máxima de Cooler de CPU:</strong> 158 mm</p>
+            <p><strong>Ventiladores:</strong></p>
+            <p><strong>Frontal:</strong> 3 x 12 cm (Opcional)</p>
+            <p><strong>Trasero:</strong> 1 x 12 cm (Opcional)</p>
+            <p><strong>Ventiladores Incluidos:</strong> Conjunto de 4 ventiladores
+            ARGB Diamond (Frontal y Trasero con modelo FCF2S7W5011C), con 16 luces
+            externas y 8 luces internas, marco Blanco + aspas blanco leche, 11
+            aspas.</p>
+            <p><strong>Panel Frontal:</strong> Con logotipo de Eagle Warrior</p>
+            <p><strong>Embalaje:</strong> Con caja marrón con logotipo de Eagle
+            Warrior</p>
+              <img src="Imagenes/Gabinete.png" alt="Gabinete">
+            <p><strong>Justificación</strong></p>
+            <p>Buen flujo de aire (4 fans) ayuda a mantener temperaturas bajas con
+            GPU y CPU bajo carga (juego + streaming). Espacio suficiente para
+            montaje y futuras ampliaciones.</p>
+            <h4>UPS — TRV 650A Neo (650 VA)</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Control:</strong> por microprocesador</p>
+            <p><strong>Tecnología:</strong> intecativa en linea</p>
+            <p><strong>Protección contra picos de tensión:</strong> Si</p>
+            <p><strong>Batería:</strong> 650VA</p>
+            <p><strong>Autonomía:</strong> 10min</p>
+            <p><strong>Protección contra sobrecargas y cortocircuitos:</strong>
+            si</p>
+            <p><strong>Arranque en frío:</strong> SI</p>
+            <p><strong>Carga de batería con el UPS apagado:</strong> si</p>
+              <img src="Imagenes/UPS.PNG" alt="UPS">
+            <p><strong>Justificación</strong></p>
+            <p>Protege datos y hardware ante cortes repentinos; permite apagar el
+            sistema correctamente y evitar corrupción. Requisito explícito de la
+            consigna: “mantener la computadora encendida por unos minutos”.</p>
+            <h4>Periféricos — Combo Gamer Genius (auriculares + teclado + mouse)</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Mouse GX Scorpion M300</strong></p>
+            <p><strong>Sensor:</strong> Óptico hasta 2400 DPI</p>
+            <p><strong>Botones:</strong> 4 (izquierda, derecha, scroll, cambio
+            DPI)</p>
+            <p><strong>Iluminación:</strong> RGB respirable 7 colores</p>
+            <p><strong>Interfaz:</strong> USB, cable de 1.5 m</p>
+            <p><strong>Peso:</strong> 81 g</p>
+            <p><strong>Dimensiones:</strong> 72 x 119 x 39 mm</p>
+            <p><strong>Teclado GX Scorpion K7 Plus</strong></p>
+            <p><strong>Tipo de tecla:</strong> Estilo mecánico, membrana</p>
+            <p><strong>Iluminación:</strong> LED RGB respiratorio</p>
+            <p><strong>Conexión:</strong> USB 2.0, cable 1.8 m</p>
+            <p><strong>Teclas multimedia:</strong> 12</p>
+            <p><strong>Anti-Ghosting:</strong> Sí, 19 teclas</p>
+            <p><strong>Resistente a derrames:</strong> Sí</p>
+            <p><strong>Peso:</strong> 711 g</p>
+            <p><strong>Dimensiones:</strong> 449 x 138 x 37 mm</p>
+            <p><strong>Auriculares GX HS-G560</strong></p>
+            <p><strong>Drivers:</strong> 50 mm</p>
+            <p><strong>Respuesta de frecuencia:</strong> 20Hz~20KHz</p>
+            <p><strong>Impedancia:</strong> 16 Ω ± 15%</p>
+            <p><strong>Sensibilidad:</strong> 103 ± 3 dB</p>
+            <p><strong>Micrófono:</strong> Sí, con control de volumen y mute</p>
+            <p><strong>Conexión:</strong> Dual Plug, cable 2 m</p>
+            <p><strong>Sonido:</strong> Stereo</p>
+            <p><strong>Peso:</strong> 305 g</p>
+            <p><strong>Dimensiones:</strong> 187.5 x 226.6 x 97.2 mm</p>
+            <p><strong>Compatibilidad</strong></p>
+            <p><strong>Sistemas:</strong> Windows 8, 10, 11 o posterior, macOS X
+            10.8 o posterior</p>
+            <p><strong>Requerimientos:</strong> Puerto USB disponible</p>
+            <p><strong>Accesorios</strong></p>
+            <p><strong>Incluye:</strong>
+            Teclado, mouse, auriculares, guía rápida</p>
+              <img src="Imagenes/Combo Perifericos.PNG" alt="Perifericos">
+            <p><strong>Justificación</strong></p>
+            <p>Buen equilibrio entre funcionalidad y precio para empezar a streamear
+            sin invertir en periféricos caros. Aporta todo lo mínimo necesario para
+            jugar y comunicarse en directo.</p>
+            <h4>Webcam — Logitech C920s 1080p HD (con tapa)</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Resolución máxima:</strong> 1080p / 30fps - 720p / 30fps</p>
+            <p><strong>Tipo de enfoque:</strong> enfoque automático</p>
+            <p><strong>Micrófono incorporado:</strong> estéreo</p>
+            <p><strong>El clip universal para trípode</strong> se adapta a laptops,
+            LCD o monitores</p>
+            <p><strong>Longitud del cable:</strong> 5 pies (1.5 m)</p>
+            <p><strong>Incluye:</strong> tapa física para privacidad.</p>
+              <img src="Imagenes/Webcam.PNG" alt="Webcam">
+            <p><strong>Justificación</strong></p>
+            <p>Standard de la industria para streamers; buena nitidez y color.</p>
+            <p>Justifica su precio por la calidad de imagen y la compatibilidad
+            plug-and-play.</p>
+            <h4>Monitor — SolarMax 22"</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Tamaño:</strong> 22 pulgadas.</p>
+            <p><strong>Resolución:</strong> normalmente Full HD (1920×1080)</p>
+            <p><strong>Frecuencia:</strong> 60–75 Hz (según modelo).</p>
+              <img src="Imagenes/Monitor.PNG" alt="Monitor">
+            <p><strong>Justificación</strong></p>
+            <p>22" es un tamaño estándar para escritorios pequeños y suficiente para
+            1080p. Es una pieza donde se puede recortar si es necesario (monitor más
+            barato o segundo monitor usado).</p>
+            <h4>Licencia de Windows — Microsoft Windows 10 OEM Home Key (GLOBAL)</h4>
+            <p><strong>Especificaciones clave</strong></p>
+            <p><strong>Tipo:</strong> clave OEM (licencia vinculada a hardware).</p>
+            <p><strong>Sistema:</strong> Windows 10 Home (actualizable a Windows 11
+            en la mayoría de equipos).</p>
+              <img src="Imagenes/Licencia Windows 10.png" alt="Licencia de windows">
+            <p><strong>Justificación</strong></p>
+            <p>Necesaria para activar el sistema operativo y obtener actualizaciones
+            y compatibilidad. Opción económica comparada con licencia Retail; válida
+            si no necesitás mover la licencia a otro equipo.</p>
+            <h3>Reducción de costos de
+            los componentes:</h3>
+            <table>
+            <colgroup>
+            <col style="width: 20%" />
+            <col style="width: 24%" />
+            <col style="width: 19%" />
+            <col style="width: 13%" />
+            <col style="width: 21%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>Componente</th>
+            <th>Modelo Seleccionado</th>
+            <th>Especificaciones</th>
+            <th>Precio $(Ars)</th>
+            <th>Fuente</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Gabinete</td>
+            <td>GABINETE MSI MAG SHIELD M301 1FAN</td>
+            <td>Aca van especificaciones</td>
+            <td>$38.268,58</td>
+            <td>fullh4rd.com.ar</td>
+            </tr>
+            <tr class="even">
+            <td>Placa Madre</td>
+            <td>Motherboard MSI B550M Pro-VDH AM4</td>
+            <td>Aca van especificaciones</td>
+            <td>$132.900,00</td>
+            <td>www.maximus.com.ar</td>
+            </tr>
+            <tr class="odd">
+            <td>Monitor</td>
+            <td>Monitor LED Solarmax 19" SX19F2 HD HDMI / VGA</td>
+            <td>Aca van especificaciones</td>
+            <td>$89.600,00</td>
+            <td>www.maximus.com.ar</td>
+            </tr>
+            <tr class="even">
+            <td>Webcam</td>
+            <td>Webcam Natec Lori Plus Full HD Autofocus</td>
+            <td>Aca van especificaciones</td>
+            <td>$50.700,00</td>
+            <td>www.maximus.com.ar</td>
+            </tr>
+            </tbody>
+            </table>
+            <table>
+            <colgroup>
+            <col style="width: 14%" />
+            <col style="width: 23%" />
+            <col style="width: 14%" />
+            <col style="width: 17%" />
+            <col style="width: 14%" />
+            <col style="width: 16%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>Componente</th>
+            <th>Modelo Anterior</th>
+            <th>Precio (ARS)</th>
+            <th>Modelo Nuevo</th>
+            <th>Precio (ARS)</th>
+            <th>Diferencia (ARS)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Gabinete</td>
+            <td>Eagle Warrior CG 20AA 4FAN ARGB</td>
+            <td>$53.834,99</td>
+            <td>MSI MAG SHIELD M301</td>
+            <td>$38.268,58</td>
+            <td>–$15.566,41</td>
+            </tr>
+            <tr class="even">
+            <td>Placa Madre</td>
+            <td>Asus B550-F ROG Strix Gaming WIFI II</td>
+            <td>$352.600,00</td>
+            <td>MSI B550M PRO-VDH</td>
+            <td>$132.900,00</td>
+            <td>–$219.700,00</td>
+            </tr>
+            <tr class="odd">
+            <td>Monitor</td>
+            <td>SolarMax 22″</td>
+            <td>$143.759,00</td>
+            <td>SolarMax 19″ SX19F2</td>
+            <td>$89.600,00</td>
+            <td>–$54.159,00</td>
+            </tr>
+            <tr class="even">
+            <td>Webcam</td>
+            <td>Logitech C920s 1080p</td>
+            <td>$130.199,00</td>
+            <td>Natec Lori Plus Full HD</td>
+            <td>$50.700,00</td>
+            <td>–$79.499,00</td>
+            </tr>
+            <tr class="odd">
+            <td>Total</td>
+            <td></td>
+            <td>$680.392,99</td>
+            <td></td>
+            <td>$311.468,58</td>
+            <td>-$368.924,41</td>
+            </tr>
+            <tr class="even">
+            <td></td>
+            <td></td>
+            <td>$466,75USD</td>
+            <td></td>
+            <td>$213,67USD</td>
+            <td>-$253,08USD</td>
+            </tr>
+            </tbody>
+            </table>
+            <table>
+            <colgroup>
+            <col style="width: 17%" />
+            <col style="width: 2%" />
+            <col style="width: 18%" />
+            <col style="width: 2%" />
+            <col style="width: 17%" />
+            <col style="width: 2%" />
+            <col style="width: 19%" />
+            <col style="width: 2%" />
+            <col style="width: 17%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th></th>
+            <th></th>
+            <th>Antes</th>
+            <th></th>
+            <th>En USD antes</th>
+            <th></th>
+            <th>Ahora</th>
+            <th></th>
+            <th>En USD ahora</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Total Presupuesto</td>
+            <td></td>
+            <td>$1.556.015,72</td>
+            <td></td>
+            <td>$1067,43USD</td>
+            <td></td>
+            <td>$1.187.091,31</td>
+            <td></td>
+            <td>$814,34USD</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4>Observación:</h4>
+            <p>El presupuesto está dentro de los $1000USD del presupuesto permitido,
+            además de estar todo en orden también sobro como $ 185,66 USD</p>
+            <h3>Comparativa y
+            justificación de los reemplazos</h3>
+            <h4>Gabinete</h4>
+            <p><strong>Antes:</strong> Eagle Warrior CG 20AA (4 fans ARGB).</p>
+            <p><strong>Ahora:</strong> MSI MAG SHIELD M301 (1 fan preinstalado).</p>
+              <img src="Imagenes/GabineteBarato.PNG" alt="Gabinete Barato">
+            <p><strong>Justificación del cambio:</strong></p>
+            <p>El modelo Eagle Warrior incluía iluminación ARGB y mayor ventilación,
+            pero su costo era elevado en relación al resto del equipo.</p>
+            <p>El MSI MAG SHIELD M301 ofrece buena calidad de construcción, diseño
+            compacto y materiales sólidos a un precio mucho más accesible. Aunque
+            cuenta con menos ventiladores, mantiene una refrigeración suficiente
+            para los componentes elegidos y permite agregar fans adicionales en el
+            futuro.</p>
+            <h4>Placa madre (Motherboard)</h4>
+            <p><strong>Antes:</strong> ASUS ROG Strix B550-F Gaming WiFi II.</p>
+            <p><strong>Ahora:</strong> MSI B550M PRO-VDH.</p>
+              <img src="Imagenes/Placa Madre Barata.PNG" alt="Placa Madre barata">
+            <p><strong>Justificación del cambio:</strong></p>
+            <p>La ASUS ROG Strix es una placa de gama alta con conectividad WiFi
+            integrada, múltiples puertos M.2 y mejor sistema de refrigeración VRM.
+            Sin embargo, gran parte de esas características no son indispensables
+            para el uso previsto (gaming y streaming).</p>
+            <p>La MSI B550M PRO-VDH mantiene compatibilidad con los mismos
+            procesadores Ryzen y brinda las funciones esenciales a un costo
+            notablemente menor, optimizando el presupuesto sin comprometer la
+            estabilidad ni la expansión básica.</p>
+            <h4>Monitor</h4>
+            <p><strong>Antes:</strong> Monitor SolarMax 22″ Full HD.</p>
+            <p><strong>Ahora:</strong> Monitor SolarMax 19″ SX19F2 HD (HDMI/VGA).</p>
+              <img src="Imagenes/Monitor Barato.PNG" alt="Monitor barato">
+            <p><strong>Justificación del cambio:</strong></p>
+            <p>El modelo de 22″ Full HD ofrecía mayor tamaño y resolución, pero su
+            diferencia de precio no se traduce en una mejora crítica para tareas de
+            streaming y uso general.</p>
+            <p>El SolarMax de 19″ sigue brindando buena nitidez, conexión HDMI y
+            bajo consumo energético. La reducción de tamaño es mínima en términos
+            prácticos, y el ahorro permite redistribuir presupuesto a componentes de
+            mayor impacto en el rendimiento.</p>
+            <h4>Webcam</h4>
+            <p><strong>Antes:</strong> Logitech C920s Full HD (1080p, autofocus,
+            micrófono dual).</p>
+            <p><strong>Ahora:</strong> Natec Lori Plus Full HD (autofocus).</p>
+              <img src="Imagenes/Webcam barata.PNG" alt="Webcam Barata">
+            <p><strong>Justificación del cambio:</strong></p>
+            <p>La Logitech C920s es una webcam profesional muy popular, pero su
+            precio elevado la hace poco rentable en un presupuesto ajustado.</p>
+            <p>La Natec Lori Plus ofrece resolución Full HD y enfoque automático a
+            un costo significativamente menor. Cumple adecuadamente para
+            transmisiones y videollamadas, sacrificando solo algunas funciones
+            secundarias como el micrófono dual y la corrección automática de luz
+            avanzada.</p>
+            <h2>Software para Streaming</h2>
+            <p>Para realizar transmisiones en vivo del videojuego seleccionado, se
+            optó por utilizar el programa OBS Studio (Open Broadcaster Software),
+            una de las herramientas más populares y completas para streaming
+            gratuito y de código abierto.</p>
+            <p>OBS Studio permite capturar la pantalla, agregar cámaras, micrófonos,
+            superposiciones gráficas, alertas y transmitir directamente a
+            plataformas como Twitch, YouTube o Kick.</p>
+            <h3">Características
+            principales de OBS Studio</h3>
+            <ul>
+            <li><p>Gratuito y de código abierto (sin licencias de pago).</p></li>
+            <li><p>Compatible con Windows, macOS y Linux.</p></li>
+            <li><p>Permite grabar y transmitir simultáneamente.</p></li>
+            <li><p>Soporte para múltiples fuentes de video y audio.</p></li>
+            <li><p>Integración con plataformas de streaming populares.</p></li>
+            <li><p>Alta personalización mediante escenas, filtros y
+            transiciones.</p></li>
+            </ul>
+            <h3>Configuración recomendada</h3>
+            <p>Parámetros de configuración recomendados para realizar transmisiones
+            fluidas y de buena calidad utilizando la PC seleccionada.</p>
+            <h4>Configuración general</h4>
+            <ul>
+            <li><p><strong>Modo de salida:</strong> Avanzado (esto te da más
+            control).</p></li>
+            <li><p><strong>Prioridad del proceso:</strong> Alta.</p></li>
+            <li><p><strong>Carpeta de grabación:</strong> SSD (el mismo NVMe), no el
+            escritorio.</p></li>
+            <li><p><strong>Tema:</strong> Oscuro (opcional, mejora visibilidad en
+            configuraciones largas).</p></li>
+            </ul>
+            <h4>Salida → Streaming</h4>
+            <p><strong>Pestaña "Emisión":</strong></p>
+            <ul>
+            <li><p><strong>Codificador:</strong> NVENC (NVIDIA) (usa la GPU RTX
+            3050, libera carga del CPU).</p></li>
+            <li><p><strong>Control de tasa de bits (Rate Control):</strong> CBR
+            (constante).</p></li>
+            <li><p><strong>Tasa de bits (Bitrate):</strong></p>
+            <ul>
+            <li><p>1080p a 60 fps → 6000 kbps.</p></li>
+            <li><p>720p a 60 fps → 4500 kbps (si tu internet es más
+            limitado).</p></li>
+            </ul></li>
+            <li><p><strong>Intervalo de fotogramas clave:</strong> 2 (requerido por
+            la mayoría de plataformas).</p></li>
+            <li><p><strong>Preset:</strong> Quality (si notás lag, bajá a
+            Performance).</p></li>
+            <li><p><strong>Tuning:</strong> High Quality.</p></li>
+            <li><p><strong>Look-ahead:</strong> desactivado.</p></li>
+            <li><p><strong>Psycho Visual Tuning:</strong> activado (mejora detalle
+            en movimiento).</p></li>
+            <li><p><strong>GPU:</strong> 0</p></li>
+            <li><p><strong>B-frames:</strong> 2</p></li>
+            </ul>
+            <h4>Salida →
+            Grabación (si querés guardar tus streams)</h4>
+            <ul>
+            <li><p><strong>Tipo:</strong> Estándar.</p></li>
+            <li><p><strong>Formato:</strong> mp4 (o mkv si querés más seguridad ante
+            cortes).</p></li>
+            <li><p><strong>Codificador:</strong> NVENC (NVIDIA)</p></li>
+            <li><p><strong>Tasa de bits:</strong> 12000–16000 kbps (buena calidad
+            sin saturar espacio).</p></li>
+            <li><p><strong>Audio:</strong> 320 kbps.</p></li>
+            <li><p><strong>Carpeta:</strong> SSD NVMe (para evitar caídas de
+            rendimiento).</p></li>
+            </ul>
+            <h4>Video</h4>
+            <ul>
+            <li><p><strong>Resolución base (canvas):</strong> 1920x1080</p></li>
+            <li><p><strong>Resolución de salida (scaled):</strong></p>
+            <ul>
+            <li><p>1920x1080 si querés máxima calidad,</p></li>
+            <li><p>1280x720 si priorizás rendimiento o conexión más débil.</p></li>
+            </ul></li>
+            <li><p><strong>Filtro de escalado:</strong> Lanczos (32 samples) (mejor
+            calidad de reescalado).</p></li>
+            <li><p><strong>FPS:</strong> 60 (para fluidez en juegos rápidos) o 30
+            (si querés reducir carga).</p></li>
+            </ul>
+            <h4>Audio</h4>
+            <ul>
+            <li><p><strong>Tasa de muestreo:</strong> 48 kHz (coincidir con Windows
+            → Panel de Sonido → Propiedades del micrófono).</p></li>
+            <li><p><strong>Micrófono:</strong> seleccioná el Natec Lori Plus (si no
+            tiene micrófono propio, usa el que agregues).</p></li>
+            <li><p><strong>Bitrate de audio (en Salida → Streaming):</strong> 160
+            kbps (voz limpia sin gastar ancho de banda).</p></li>
+            </ul>
+            <h4>Fuentes recomendadas</h4>
+            <ul>
+            <li><p><strong>Captura de juego:</strong> para el gameplay
+            directo.</p></li>
+            <li><p><strong>Captura de ventana:</strong> para menús o
+            aplicaciones.</p></li>
+            <li><p><strong>Dispositivo de video:</strong> tu webcam.</p></li>
+            <li><p><strong>Fuente de audio:</strong> micrófono + salida del sistema
+            (juego).</p></li>
+            <li><p><strong>Superposiciones (overlays):</strong> PNG o texto, nada de
+            efectos pesados.</p></li>
+            </ul>
+            <h4>Internet mínimo recomendado</h4>
+            <ul>
+            <li><p><strong>Subida mínima:</strong></p>
+            <ul>
+            <li><p>6 Mbps para 1080p60</p></li>
+            <li><p>4 Mbps para 720p60</p></li>
+            </ul></li>
+            </ul>
+            <h2>Rendimiento estimado</h2>
+            <h3>Equipo base considerado: </h3>
+            <p>AMD Ryzen 5 5600X, NVIDIA RTX 3050, 16 GB DDR4 3200, SSD NVMe 1 TB,
+            PSU 650 W, OBS con NVENC.</p>
+            <h4>FPS estimados (Fortnite)</h4>
+            <ul>
+            <li><p><strong>Solo juego (sin transmitir)</strong></p>
+            <ul>
+            <li><p>Resolución 1080p, calidad alta/epic: <strong>≈ 100–140
+            FPS</strong>.</p></li>
+            <li><p>Resolución 1080p, calidad ultra con trazado desactivado:
+            <strong>≈ 90–120 FPS</strong>.</p></li>
+            </ul></li>
+            <li><p><strong>Juego + streaming (OBS usando NVENC, stream
+            720p60)</strong></p>
+            <ul>
+            <li><p>Resolución juego 1080p, stream 720p60: <strong>≈ 90–130
+            FPS</strong> (dependiendo de escena, distancia de draw, cantidad de
+            efectos).</p></li>
+            </ul></li>
+            <li><p><strong>Juego + streaming (OBS usando NVENC, stream
+            1080p60)</strong></p>
+            <ul>
+            <li><p>Resolución juego 1080p con settings ajustados a media-alta:
+            <strong>≈ 60–90 FPS</strong>.</p></li>
+            </ul></li>
+            </ul>
+            <h4>Uso
+            estimado de CPU / GPU / RAM (valores aproximados en carga)</h4>
+            <ul>
+            <li><p><strong>GPU (RTX 3050)</strong></p>
+            <ul>
+            <li><p>Solo juego 1080p: <strong>~60–85%</strong> de utilización en
+            escenas intensas.</p></li>
+            <li><p>Juego + stream (NVENC): <strong>~65–95%</strong> (NVENC no reduce
+            uso de GPU para render; la GPU sigue trabajando para el juego).</p></li>
+            </ul></li>
+            <li><p><strong>CPU (Ryzen 5 5600X)</strong></p>
+            <ul>
+            <li><p>Solo juego: <strong>~25–45%</strong> dependiendo del título y de
+            hilos usados.</p></li>
+            <li><p>Juego + stream (NVENC): <strong>~35–60%</strong></p></li>
+            <li><p>Juego + stream (x264 muy alto): <strong>&gt;
+            80%</strong></p></li>
+            </ul></li>
+            <li><p><strong>RAM</strong></p>
+            <ul>
+            <li><p>Uso típico en juego + OBS: <strong>8–12 GB</strong>; con otras
+            apps abiertas puede acercarse a los 14–15 GB. Con 16 GB estás en límite
+            razonable; 32 GB daría más margen para multitarea intensa.</p></li>
+            </ul></li>
+            </ul>
+            <h4>Temperaturas previstas
+            (rangos típicos)</h4>
+            <ul>
+            <li><p><strong>GPU:</strong> 60–80 °C bajo carga sostenida (dependiendo
+            flujo de aire).</p></li>
+            <li><p><strong>CPU:</strong> 55–75 °C bajo carga (con cooler de
+            stock/aftermarket y buena ventilación).</p></li>
+            <li><p><strong>SSD NVMe:</strong> 35–60 °C según
+            case/ventilación.</p></li>
+            </ul>
+            <h4>Consumo
+            de red y tamaños de grabación (cálculo paso a paso)</h4>
+            <p><strong>Recomendaciones de bitrate para streaming:</strong></p>
+            <ul>
+            <li><p>1080p60 → 6000 kbps (6.000 kbps) recomendado.</p></li>
+            <li><p>720p60 → 4500 kbps (4.500 kbps) recomendado.</p></li>
+            </ul>
+            <p><strong>Tamaño por hora de stream:</strong></p>
+            <p>Cálculo para 6000 kbps:</p>
+            <ol type="1">
+            <li><p>6000 kbps = 6.000 kilobits por segundo.</p></li>
+            <li><p>bits por hora = 6.000 × 1.000 × 3.600 = 21.600.000.000
+            bits.</p></li>
+            <li><p>bytes por hora = 21.600.000.000 / 8 = 2.700.000.000
+            bytes.</p></li>
+            <li><p>GB por hora = 2.700.000.000 / 1.000.000.000 = <strong>2,7
+            GB/hora</strong>.</p></li>
+            </ol>
+            <p>Cálculo para 4500 kbps:</p>
+            <ol type="1">
+            <li><p>4500 × 1.000 × 3.600 = 16.200.000.000 bits/hora.</p></li>
+            <li><p>/8 = 2.025.000.000 bytes/hora.</p></li>
+            <li><p>/1e9 = <strong>2,025 GB/hora</strong>.</p></li>
+            </ol>
+            <p>Cálculo para grabación a 12000 kbps (si grabás localmente a alta
+            calidad):</p>
+            <ol type="1">
+            <li><p>12.000 × 1.000 × 3.600 = 43.200.000.000 bits/hora.</p></li>
+            <li><p>/8 = 5.400.000.000 bytes/hora.</p></li>
+            <li><p>/1e9 = <strong>5,4 GB/hora</strong>.</p></li>
+            </ol>
+            <h4>Impacto del encoder (NVENC vs
+            x264)</h4>
+            <ul>
+            <li><p><strong>NVENC (recomendado con RTX 3050):</strong></p>
+            <ul>
+            <li><p>Ventaja: <strong>baja carga de CPU</strong>, buena calidad
+            moderna (especialmente en las últimas generaciones).</p></li>
+            <li><p>Recomendado para streaming simultáneo: mantiene juego fluido y
+            buen stream sin necesidad de una CPU muy potente.</p></li>
+            </ul></li>
+            <li><p><strong>x264 (CPU):</strong></p>
+            <ul>
+            <li><p>Ventaja: buena calidad por bitrate si la CPU lo soporta.</p></li>
+            <li><p>Desventaja: para 1080p60 con buena calidad exige mucho CPU (puede
+            elevar uso a &gt;80% y reducir FPS del juego). No recomendado en tu
+            build para 1080p60 a alta calidad.</p></li>
+            </ul></li>
+            </ul>
+            <h2>Posibles mejoras futuras</h2>
+            <p>Con un presupuesto más amplio, es posible realizar mejoras que
+            incrementen el rendimiento de la PC, la calidad del streaming y la
+            experiencia de juego general. En la tabla siguiente se detallan algunas
+            opciones recomendadas para optimizar el sistema a futuro indicando su
+            prioridad y como se notaría la mejora en sí.</p>
+            <table>
+            <colgroup>
+            <col style="width: 23%" />
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+            <col style="width: 26%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th><strong>Prioridad</strong></th>
+            <th><strong>Componente / Periférico</strong></th>
+            <th><strong>Mejora sugerida</strong></th>
+            <th><strong>Qué mejoraría notablemente</strong></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>1</td>
+            <td><strong>GPU</strong> → RTX 4060 / RTX 4060 Ti</td>
+            <td>Aumento de potencia gráfica y VRAM (más núcleos, mejor NVENC)</td>
+            <td>FPS sostenidos más altos en 1080p/1440p, posibilidad de jugar en
+            calidad ultra y <strong>stream 1080p60</strong> sin tocar ajustes; mejor
+            uso de DLSS y más margen para juegos futuros.</td>
+            </tr>
+            <tr class="even">
+            <td>2</td>
+            <td><strong>CPU</strong> → Ryzen 7 7700 / Intel i7 12700</td>
+            <td>Más núcleos/hilos y rendimiento por núcleo</td>
+            <td>Mejor multitarea (juego + stream + grabación + chat/overlays), menor
+            riesgo de cuello de botella al usar x264, tiempos de encoding más
+            rápidos si se usa CPU.</td>
+            </tr>
+            <tr class="odd">
+            <td>3</td>
+            <td><strong>RAM</strong> → 32 GB DDR4/DDR5 3600+</td>
+            <td>Más capacidad y/o mayor frecuencia</td>
+            <td>Mejor manejo de multitarea intensa (navegadores, OBS, grabación,
+            aplicaciones de edición), menor uso de swap y más estabilidad en
+            sesiones largas.</td>
+            </tr>
+            <tr class="even">
+            <td>4</td>
+            <td><strong>Almacenamiento</strong> → NVMe Gen4 2 TB</td>
+            <td>Mayor velocidad y capacidad</td>
+            <td>Tiempos de carga instantáneos, almacenamiento suficiente para
+            grabaciones largas en alta calidad, menor riesgo de I/O bottleneck
+            durante grabación.</td>
+            </tr>
+            <tr class="odd">
+            <td>5</td>
+            <td><strong>Fuente (PSU)</strong> → 750–850 W 80+ Gold</td>
+            <td>Más potencia y eficiencia</td>
+            <td>Soporta GPUs y CPUs más potentes con margen, temperaturas/ruido
+            menores y mayor fiabilidad a largo plazo.</td>
+            </tr>
+            <tr class="even">
+            <td>6</td>
+            <td><strong>Refrigeración CPU / Case fans</strong> → AIO 240/280 mm o
+            buen cooler + fans de alta calidad</td>
+            <td>Mejor disipación térmica</td>
+            <td>Temperaturas más bajas, más estabilidad en sesiones largas y
+            posibilidad de overclock ligero; reduce throttling.</td>
+            </tr>
+            <tr class="odd">
+            <td>7</td>
+            <td><strong>Monitor</strong> → 1440p 144 Hz (o 1080p 240 Hz para
+            competitivo)</td>
+            <td>Mejor resolución/refresh</td>
+            <td>Mejor experiencia visual en juego; mayor precisión en juegos
+            competitivos y vsync/tearing reducido; mejora percepción de calidad
+            durante streaming.</td>
+            </tr>
+            <tr class="even">
+            <td>8</td>
+            <td><strong>Micrófono</strong> → Shure SM7B + interfaz o Electro-Voice
+            RE20</td>
+            <td>Calidad de voz profesional</td>
+            <td>Sonido mucho más claro, reducción de ruido ambiente, mejora notable
+            en la experiencia del espectador y profesionalidad del canal.</td>
+            </tr>
+            <tr class="odd">
+            <td>9</td>
+            <td><strong>Cámara</strong> → DSLR / Mirrorless + capturadora (Elgato
+            Cam Link 4K)</td>
+            <td>Sensor grande y control de imagen</td>
+            <td>Imagen de alta calidad (mejor bokeh, color, luz), aspecto
+            “profesional” en el stream; posibilidad de 60fps/4K para reencodes.</td>
+            </tr>
+            <tr class="even">
+            <td>10</td>
+            <td><strong>Capturadora externa</strong> → Elgato 4K60 S+</td>
+            <td>Captura de cámaras o consolas sin carga al PC</td>
+            <td>Permite usar cámara externa/console passthrough sin impactar
+            CPU/GPU; útil para multi-source streaming.</td>
+            </tr>
+            <tr class="odd">
+            <td>11</td>
+            <td><strong>Red / Router</strong> → Router Wi-Fi 6 + cableado CAT6 /
+            conexión simétrica</td>
+            <td>Más ancho de banda estable y baja latencia</td>
+            <td>Streams más estables, menor packet loss, mejor upload sustentable
+            para 1080p60; menor lag en juegos online.</td>
+            </tr>
+            <tr class="even">
+            <td>12</td>
+            <td><strong>UPS</strong> → 1500 VA (online/line-interactive)</td>
+            <td>Mayor autonomía y protección</td>
+            <td>Más minutos de respaldo, protección ante variaciones de red
+            prolongadas y seguridad para apagados controlados.</td>
+            </tr>
+            <tr class="odd">
+            <td>13</td>
+            <td><strong>Periféricos gaming</strong> → Teclado mecánico TKL + ratón
+            de gama media-alta</td>
+            <td>Mejor ergonomía y precisión</td>
+            <td>Mayor confort en sesiones largas, mejor respuesta en juegos
+            competitivos y posibilidad de personalización.</td>
+            </tr>
+            <tr class="even">
+            <td>14</td>
+            <td><strong>Iluminación / Fondo</strong> → Key light + softbox + fondo
+            verde</td>
+            <td>Mejor iluminación y composición visual</td>
+            <td>Imagen más profesional, mejor chroma key si usás fondo verde, reduce
+            ruido en webcam y mejora calidad visual del stream.</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2 id="uso-de-inteligencia-artificial">Uso de Inteligencia
+            Artificial</h2>
+            <h3 id="capturas-de-interacción-con-la-ia">1. Capturas de interacción
+            con la IA</h3>
+              <img src="Imagenes/1 Interaccion1.png" alt="IA">
+              <img src="Imagenes/2 Interaccion1.png" alt="IA">
+              <img src="Imagenes/3 Interaccion1.png" alt="IA">
+            <h4>Reflexión:</h4>
+            <p>Estoy en desacuerdo con la recomendación de elegir el AMD Ryzen 7
+            5700X3D o el Intel i5-14600K para streamear Fortnite con un presupuesto
+            de $1000 USD. Si bien estos procesadores ofrecen un rendimiento
+            excelente, su costo total y el de los componentes acompañantes (GPU,
+            RAM, placa madre DDR5) exceden significativamente el presupuesto. Por
+            eso, opté por el AMD Ryzen 5 5600X, que ofrece 6 núcleos y 12 hilos,
+            suficiente para jugar Fortnite a 1080p y transmitir en 720p–1080p
+            simultáneamente. Esta elección permite mantener el presupuesto dentro
+            del límite, sin sacrificar un rendimiento adecuado en juegos ni
+            streaming. Además, al ser compatible con DDR4 y placas madre más
+            económicas, se optimiza la relación costo/rendimiento de toda la PC, lo
+            que hace que la construcción sea más viable y equilibrada.</p>
+              <img src="Imagenes/1 Interaccion2.png" alt="IA">
+              <img src="Imagenes/2 Interaccion2.png" alt="IA">
+              <img src="Imagenes/3 Interaccion2.png" alt="IA">
+              <img src="Imagenes/4 Interaccion2.png" alt="IA">
+            <h4>Reflexión:</h4>
+            <p>Estoy en desacuerdo con la recomendación de usar una notebook para
+            streamear Fortnite con un presupuesto limitado. Aunque la IA explica
+            correctamente las diferencias entre GPU integrada y dedicada, mi
+            elección fue una PC de escritorio porque ofrece mucho mejor rendimiento
+            por el mismo precio, mayor capacidad de actualización y más opciones de
+            componentes que se adaptan al presupuesto de $1000 USD. En particular,
+            aunque una notebook con GPU dedicada como la MSI GF63 11UC-262 ofrece
+            streaming a 1080p, su costo es significativamente más alto y no permite
+            reemplazar componentes fácilmente ni agregar periféricos económicos de
+            calidad, algo que sí se puede hacer con una PC de escritorio. Por eso,
+            opté por un Ryzen 5 5600X + RTX 3050 en escritorio, que garantiza un
+            rendimiento similar o superior en Fortnite y streaming, manteniendo el
+            presupuesto controlado y dejando margen para periféricos y otros
+            accesorios.</p>
+            <h3>2. Tabla
+            comparativa generada con ayuda de IA + validación</h3>
+              <img src="Imagenes/Tabla comparativa IA.png" alt="TABLA COMPARATIVA">
+            <h4>Fuente de validación:</h4>
+            <p><strong>AMD Ryzen 5 5600X</strong></p>
+            <p>En la página de venta de mexx.com dicho procesador coincide con los
+            resultados de chatgpt. Lo único que no coincide del todo bien es el
+            precio a que en dicha página el componente es mucho más barato ($88USD)
+            que el margen de precios que dijo la IA.</p>
+            <p><a
+            href="https://www.mexx.com.ar/productos-rubro/procesadores/47212-procesador-amd-ryzen-5-5500-3.6-ghz-am4-sin-gpu.html">https://www.mexx.com.ar/productos-rubro/procesadores/47212-procesador-amd-ryzen-5-5500-3.6-ghz-am4-sin-gpu.html</a></p>
+            <p><strong>Intel Core i5 12400F</strong></p>
+            <p>Al igual que el procesador anterior también se encontró información
+            de este procesador en la página de mexx.com donde cada una de sus
+            especificaciones son exactas, incluyendo el precio del producto que esta
+            dentro del margen que dijo chatgpt ($175USD).</p>
+            <p><a
+            href="https://www.mexx.com.ar/productos-rubro/procesadores/41760-procesador-intel-core-i5-12400-4.4-ghz-alder-lake-1700.html">https://www.mexx.com.ar/productos-rubro/procesadores/41760-procesador-intel-core-i5-12400-4.4-ghz-alder-lake-1700.html</a></p>
+            <p><strong>Intel Core i5 13400F</strong></p>
+            <p>En este caso se buscó la fuente de la página oficial de Intel
+            (intel.la). Donde cada dato proporcionado por la inteligencia artificial
+            es correcto, exceptuando el precio el cual no esta tan diferente del
+            mencionado, pero si tiene una mínima variación en el margen.
+            ($196.00-$206.00 USD)</p>
+            <p><a
+            href="https://www.intel.la/content/www/xl/es/products/sku/230501/intel-core-i513400f-processor-20m-cache-up-to-4-60-ghz/specifications.html">https://www.intel.la/content/www/xl/es/products/sku/230501/intel-core-i513400f-processor-20m-cache-up-to-4-60-ghz/specifications.html</a></p>
+            <h4 id="reflexión-2">Reflexión:</h4>
+            <p>Como conclusión se llegó a elegir el componente AMD Ryzen 5 5600X
+            debido a su capacidad, funcionalidad y sobretodo su gran precio
+            económico en especial en tiendas argentinas.</p>
+            <h3
+            id="resumen-técnico-explicado-con-ia-traducción-al-lenguaje-común">3.
+            Resumen técnico explicado con IA + traducción al “lenguaje común”</h3>
+            <h4 id="explicaciones-con-ia">Explicaciones con IA</h4>
+            <p><strong>¿Qué es el bitrate en streaming?</strong></p>
+            <p><strong>Definición:</strong> Es la cantidad de datos que se envían
+            por segundo durante una transmisión de video o audio en vivo. Se mide
+            normalmente en kbps (kilobits por segundo) o Mbps (megabits por
+            segundo).</p>
+            <p><strong>Ejemplo práctico:</strong> Un bitrate bajo (por ejemplo 2
+            Mbps) transmite video con menos detalle, puede verse pixelado o
+            borroso.</p>
+            <p>Un bitrate alto (por ejemplo 6–8 Mbps) transmite video más nítido y
+            fluido, pero requiere más velocidad de internet.</p>
+            <p><strong>Importancia:</strong> El bitrate determina la calidad visual
+            de tu stream y debe equilibrarse con la velocidad de tu conexión a
+            internet para evitar cortes o buffering.</p>
+            <p><strong>¿Qué es la latencia?</strong></p>
+            <p><strong>Definición:</strong> Es el retraso de tiempo entre que ocurre
+            un evento y cuando se ve o se recibe la información. En streaming se
+            mide desde que la acción ocurre en tu juego hasta que tus espectadores
+            la ven.</p>
+            <p><strong>Ejemplo práctico:</strong> Si tu stream tiene una latencia de
+            5 segundos, lo que haces en el juego se verá con 5 segundos de retraso
+            en la pantalla de tus espectadores.</p>
+            <p><strong>Importancia:</strong></p>
+            <p>Baja latencia → interacción más rápida con la audiencia.</p>
+            <p>Alta latencia → retraso notable, difícil de interactuar en tiempo
+            real.</p>
+            <p><strong>¿Qué función cumple la GPU en una PC gamer?</strong></p>
+            <p><strong>Definición:</strong> GPU (Unidad de Procesamiento Gráfico) es
+            el “cerebro” que procesa gráficos y efectos visuales en tu
+            computadora.</p>
+            <p><strong>Funciones principales:</strong></p>
+            <p>Renderizar gráficos 3D de juegos y simulaciones.</p>
+            <p>Procesar efectos visuales como sombras, luces, texturas y
+            partículas.</p>
+            <p>Reducir la carga de la CPU, permitiendo que el juego y otras
+            aplicaciones funcionen mejor.</p>
+            <p>En streaming, algunas GPUs también ayudan a codificar el video (como
+            NVIDIA NVENC), aliviando la carga de la CPU y mejorando la calidad de
+            transmisión.</p>
+            <p><strong>Ejemplo práctico</strong>: Una GTX 1660 Super permite jugar
+            Fortnite en 1080p a 60 FPS con todo al máximo, mientras una GPU
+            integrada tendría que bajar los gráficos para mantener fluidez.</p>
+            <h4 id="traducción-al-lenguaje-común">Traducción al “lenguaje
+            común”</h4>
+            <p><strong>¿Qué es el bitrate en streaming?</strong></p>
+            <p>El bitrate es básicamente la cantidad de datos que se mandan por
+            segundo cuando transmitís en vivo. Cuantos más datos se envían, mejor se
+            ve y se escucha el stream, pero también más internet necesitás.</p>
+            <p>Es el que define la calidad del stream, y hay que encontrar un punto
+            justo entre buena imagen y estabilidad según la velocidad de tu
+            internet.</p>
+            <p><strong>¿Qué es la latencia?</strong></p>
+            <p>La latencia es el tiempo de retraso que hay entre lo que pasa en el
+            juego y lo que los espectadores ven en la transmisión. El tan conocido
+            delay.</p>
+            <p><strong>¿Qué función cumple la GPU en una PC gamer?</strong></p>
+            <p>La GPU es el componente que se encarga de procesar los gráficos del
+            juego: texturas, luces, sombras, partículas, todo lo visual.</p>
+            <p>Además, en el caso del streaming, muchas GPUs como las de NVIDIA,
+            tienen un sistema especial (NVENC) que ayuda a codificar el video en
+            tiempo real, lo que mejora la calidad del stream y evita que el juego se
+            trabe.</p>
+            <h3>4. Imagen
+            generada con IA que represente el Trabajo</h3>
+            <p>Comenzamos el Primer Streaming con fortnite</p>
+              <img src="Imagenes/ChatGPT Image 18 oct 2025, 15_39_18.png" alt="IA setup">
+            <p>El prompt utilizado fue el siguiente: “Haceme la siguiente imagen:
+            Una persona haciendo streaming de videojuegos desde una PC económica con
+            monitor, teclado y webcam. Estilo realista, iluminación natural,
+            ambiente de escritorio ordenado.” La imagen busca transmitir un pequeño
+            setup gaming de streamer principiante.</p>
+            <h2 id="conclusiones-finales">Conclusiones Finales</h2>
+            <h3 id="cómo-te-ayudó-la-ia-en-este-trabajo">¿Cómo te ayudó la IA en
+            este trabajo?</h3>
+            <p>La IA me ayudo bastante a darme ideas de cómo elegir componentes,
+            pero, no fue lo suficientemente útil, parte del trabajo mejor lo hice
+            yo. Lo que sí cabe destacar que la ayuda de la IA fue crucial para saber
+            la compatibilidad de ciertos componentes.</p>
+            <h3
+            id="detectaste-errores-o-información-poco-confiable-cómo-lo-resolviste">¿Detectaste
+            errores o información poco confiable? ¿Cómo lo resolviste?</h3>
+            <p>Si totalmente, en especial la información de precios. Preferí buscar
+            por mi propia cuenta.</p>
+            <p><strong><u>¿En qué casos preferís buscar información manualmente en
+            lugar de usar</u> IA?</strong></p>
+            <p>En casos de información técnica prefiero buscarlo yo manualmente,
+            como las especificaciones de componentes, precios, etc. Además, la IA no
+            sabe cómo buscar precios bastantes económicos porque buscando por mi
+            cuenta los encontré más baratos a ciertos componentes. Yo solo usaría la
+            IA para temas de sintaxis y otras cosas como guía, no como fuente fiable
+            de información o investigación.</p>
+            
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECCIÓN INDIVIDUAL: IARA -->
+        <!-- ============================================ -->
+        
+        <div class="integrante-section">
+            <div class="integrante-nombre">📋 Presupuesto de Iara Bifiger</div>
+            
+            <section id="trabajo-Iara">
+              <h2>PC GAMER PARA STREAMING - PRESUPUESTO MEDIO</h2>
+
+              <h3>Lista de componentes y presupuesto</h3>
+  
+              <table>
+                <tr>
+                  <th>Componente</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th>Fuente</th>
+                </tr>
+                <tr>
+                  <td><strong>Motherboard</strong></td>
+                  <td>Motherboard Gigabyte B550M K AM4</td>
+                  <td>$131.300</td>
+                  <td>
+                    <a href="https://www.maximus.com.ar/" target="_blank">https://www.maximus.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Microprocesador</strong></td>
+                  <td>Micro-AMD Ryzen 5500 4.2 Ghz AM4</td>
+                  <td>$131.600</td>
+                  <td>
+                    <a href="https://www.maximus.com.ar/" target="_blank">https://www.maximus.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Cooler</strong></td>
+                  <td>CPU Cooler Master Hyper 620s ARGB</td>
+                  <td>$72.500</td>
+                  <td>
+                    <a href="https://www.maximus.com.ar/" target="_blank">https://www.maximus.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Memoria RAM</strong></td>
+                  <td>Memoria RAM Hiksemi Armor White 16GB 3200MHz DDR4</td>
+                  <td>$55.200</td>
+                  <td>
+                    <a href="https://www.maximus.com.ar/" target="_blank">https://www.maximus.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>SSD</strong></td>
+                  <td>SSD 512 GB Verbatim Vi 3000 M2 NVMe PCIe x4</td>
+                  <td>$52.714,09</td>
+                  <td>
+                    <a href="https://www.maximus.com.ar/" target="_blank">https://www.maximus.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Gabinete</strong></td>
+                  <td>Gabinete Gamer Zer01 Gaming Orion 4 Fan ARGB</td>
+                  <td>$64.998,16</td>
+                  <td>
+                    <a href="https://www.maximus.com.ar/" target="_blank">https://www.maximus.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                <td><strong>Fuente</strong></td>
+                  <td>850W Cooler Master MWE80 Plus Gold</td>
+                  <td>$138.700</td>
+                  <td>
+                    <a href="https://www.maximus.com.ar/" target="_blank">https://www.maximus.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Monitor</strong></td>
+                  <td>MONITOR GAMER 24" MSI PRO MP243L E14 FHD 144HZ 1MS HDMI VGA</td>
+                  <td>$195.991,95</td>
+                  <td>
+                    <a href="https://fullh4rd.com.ar/" target="_blank">https://fullh4rd.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Disco duro</strong></td>
+                  <td>HD HDD 4TB WD PURPLE SATA III 3.5" VIDEOVIGILANCIA</td>
+                  <td>$166.072,02</td>
+                  <td>
+                    <a href="https://fullh4rd.com.ar/" target="_blank">https://fullh4rd.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Placa de video</strong></td>
+                  <td>VIDEO RADEON RX 6400 4GB SAPPHIRE PULSE LR</td>
+                  <td>$242.994,75</td>
+                  <td>
+                    <a href="https://fullh4rd.com.ar/" target="_blank">https://fullh4rd.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Teclado</strong></td>
+                  <td>Teclado Geminis RHOD 300 RGB</td>
+                  <td>$31.500</td>
+                  <td>
+                    <a href="https://www.maximus.com.ar/" target="_blank">https://www.maximus.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Mouse</strong></td>
+                  <td>Mouse Fury Scopper RGB</td>
+                  <td>$6.300</td>
+                  <td>
+                    <a href="https://www.maximus.com.ar/" target="_blank">https://www.maximus.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Auriculares</strong></td>
+                  <td>AURICULAR QBOX H039 USB JACK 3.5 Y 3 PINES GAMER CALL CENTER CELULAR H390 H110</td>
+                  <td>$11.639,96</td>
+                  <td>
+                    <a href="https://fullh4rd.com.ar/" target="_blank">https://fullh4rd.com.ar/</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Licencia de Windows 11</strong></td>
+                  <td>Windows 11</td>
+                  <td>$41.989,56</td>
+                  <td>
+                    <a href="https://fullh4rd.com.ar/" target="_blank">https://fullh4rd.com.ar/</a>
+                  </td>
+                </tr>
+              </table>
+
+              <div class="highlight">
+                <p><strong>Total:</strong> $1.343.150,50</p>
+              </div>
+
+              <h3>Justificación y comparación</h3>
+
+              <h4>Motherboard</h4>
+              <p>La Tarjeta Madre Gigabyte Micro ATX B550M DS3H ofrece una sólida base para construir una computadora con procesadores AMD Ryzen. Sin embargo, es importante tener en cuenta la necesidad de actualizar el BIOS si planea usar un procesador de la serie Ryzen 5000 a comparación de la segunda opción de la Gigabyte A520M H, la cual No tiene las mismas características que el chipset B550, como soporte para PCIe 4.0, que la hace menos futura</p>
+
+              <h4>Microprocesador</h4>
+              <p>El micro-AMD Ryzen 5 5500 es más asequible que el Intel Core i5-14400F (la segunda opción de microprocesador). Aunque el Intel Core i5-14400F ofrece mejores prestaciones, el Ryzen 5 5500 sigue siendo un procesador capaz que ofrece un buen rendimiento para juegos y aplicaciones</p>
+
+              <h4>Cooler</h4>
+              <p>El Hyper 620s ARGB tiene 6 heatpipes de cobre y un diseño más eficiente, lo que le permite enfriar procesadores más potentes. al mismo tiempo, el ventilador del Hyper 620s ARGB tiene un nivel de ruido más bajo en comparación con el Cooler Master Hyper 212 (la segunda opción de Cooler)</p>
+
+              <h4>Memoria Ram</h4>
+              <p>La Hiksemi Armor White fue elegida ya que ofrece 16 GB de capacidad, mientras que la Silicon Power solo ofrece 8 GB también agregándole que el Silicon Power, el cual tiene una menor velocidad comparada a la Hiksemi Armor White que tiene una velocidad de 3200 MHz</p>
+
+              <h4>SSD</h4>
+              <p>El Verbatim Vi3000 elegido ya que es significativamente más rápido que el Kingston A400, lo que se traduce en tiempos de arranque más rápidos, carga de aplicaciones más rápida y mejor rendimiento general, sumándole que el Verbatim es ideal para tareas exigentes como edición de video, juegos y aplicaciones de alta intensidad</p>
+
+              <h4>Gabinete</h4>
+              <p>El Gabinete Gamer Zer01 Gaming Orion 4 Fan ARGB es significativamente más asequible que el Gabinete Gamer Zer01 Pollux, esa es la razón por la cual el gabinete Gamer Zer01 Gaming Orion 4 Fan ARGB fue elegido fue por motivos de presupuesto</p>
+
+              <h4>Fuente</h4>
+              <p>La Cooler Master MWE 850W, fue elegido por que ofrece una potencia significativamente mayor que la EVGA 650 GS como también más conectores que la EVGA 650 GS lo que la hace más versátil para conectar múltiples dispositivos. Pero sin desmeritar a ambas fuentes de alimentación tienen una eficiencia similar</p>
+
+              <h4>Monitor</h4>
+              <p>La frecuencia de refresco de 144Hz del Monitor Gamer 24" MSI PRO MP243L E14 lo cual es ideal para gaming y aplicaciones que requieren una alta velocidad de refresco, también el panel IPS del Monitor Gamer 24" MSI PRO MP243L E14 ofrece una excelente calidad de imagen y ángulos de visión amplios. Tambien la pantalla de 24 pulgadas del Monitor Gamer 24" MSI PRO MP243L E14 es más grande que la del Monitor Gamer 22" Samsung Essential S3 D300, por lo tanto, le da una ventaja ya que en juegos como el Fornite está bien tener una pantalla de ese tamaño</p>
+
+              <h4>Disco duro</h4>
+              <p>El WD Purple está diseñado específicamente para sistemas de videovigilancia, lo que conlleva un alto rendimiento en aplicaciones de grabación de video a diferencia del Seagate SkyHawk 4TB SATA III 3.5 el cual difiere en algunos puntos en calidad, además el WD Purple cuenta con tecnología de monitoreo de estado que permite detectar problemas potenciales y prevenir pérdidas de datos.</p>
+
+              <h4>Placa de video</h4>
+              <p>La SAPPHIRE Pulse Radeon RX 6400 tiene una frecuencia de hasta 2321 MHz, lo que la hace ligeramente más rápida que PowerColor Radeon RX 6400 Low Profile 4GB al mismo tiempo, La SAPPHIRE Pulse Radeon RX 6400 cuenta con un sistema de enfriamiento axial fan cooling technology que garantiza un rendimiento óptimo y una mayor durabilidad a futuro</p>
+
+              <h4>Teclado</h4>
+              <p>La función Anti-Ghosting del teclado Genesis Rhod 300 RGB garantiza una perfecta lectura de hasta 19 teclas pulsadas a la vez, lo que es esencial para juegos que requieren múltiples acciones, simultaneamente resistente a salpicaduras, lo que lo hace más duradero y fiable en un futuro, lo cual además de su precio lo hizo una buena opción comparándola con el teclado Logitech K120</p>
+
+              <h4>Mouse</h4>
+              <p>La caraterista del mouse Fury Scopper RGB, el cual es que es compatible con software de personalización, lo que permite a los usuarios ajustar la iluminación, la resolución y otros parámetros para optimizar su experiencia de juego. Fue lo que logro ser elegido sobre el Logitech G203</p>
+
+              <h4>Auriculares</h4>
+              <p>El micrófono de los QBOX H039 cuenta con cancelación de ruido, lo que garantiza una comunicación clara y sin distracciones durante las llamadas, una gran característica a la hora de hacer stream jugando a videojuegos</p>
+
+              <h3>Tabla comparativa generada con ayuda de IA + validación</h3>
+
+              <img src="Imagenes/Foto1-Iara.png" alt="Foto ChatGPT">
+              <img src="Imagenes/Foto2-Iara.png" alt="Foto ChatGPT">
+
+              <h3>Tabla comparativa generada con ayuda de IA + validación (parte 2)</h3>
+
+              <img src="Imagenes/Foto3-Iara.png" alt="Foto ChatGPT">
+
+              <h3>Fuentes externas para verificación</h3>
+  
+              <ul>
+                <li><strong>Gigabyte B550M DS3H especificaciones:</strong><a href="GIGABYTE.com" target="_blank"> GIGABYTE.com</a></li>
+                <li><strong>Gigabyte A520M H especificaciones:</strong><a href="www.licbplus.com.dz/" target="_blank"> www.licbplus.com.dz/</a></li>
+                <li><strong>AMD Ryzen 5 5500 especificaciones:</strong><a href="https://www.bhphotovideo.com/" target="_blank"> https://www.bhphotovideo.com/</a></li>
+                <li><strong>Intel Core i5-14400F especificaciones:</strong><a href="https://www.intel.com/" target="_blank"> https://www.intel.com/</a></li>
+                <li><strong>Cooler Master Hyper 620S especificaciones:</strong><a href="jetlaptechnologies.com" target="_blank"> jetlaptechnologies.com</a></li>
+                <li><strong>Cooler Master Hyper 212 Black especificaciones:</strong><a href="Tom's Hardware.com" target="_blank"> Tom's Hardware.com</a></li>
+                <li><strong>HikSeni Armor White RAM:</strong><a href="sourcetechcomputer.com" target="_blank"> sourcetechcomputer.com</a></li>
+                <li><strong>Silicon Power SP008GBSFU320X02:</strong><a href="ecidisti.com" target="_blank"> ecidisti.com</a></li>
+                <li><strong>Verbatim Vi3000 NVMe SSD:</strong><a href="verbatim.com" target="_blank"> verbatim.com</a></li>
+                <li><strong>Kingston A400 SSD:</strong><a href="Kingston Technology Company.com" target="_blank"> Kingston Technology Company.com</a></li>
+                <li><strong>WD Purple 4TB HDD:</strong><a href="zenitel.com" target="_blank"> zenitel.com</a></li>
+                <li><strong>Seagate SkyHawk 4TB HDD:</strong><a href="Seagate.com" target="_blank"> Seagate.com</a></li>
+                <li><strong>Sapphire Pulse RX 6400:</strong><a href="sapphiretech.global" target="_blank"> sapphiretech.global</a></li>
+                <li><strong>PowerColor RX 6400 Low Profile:</strong><a href="PowerColor" target="_blank"> PowerColor</a></li>
+                <li><strong>Cooler Master MWE Gold 850W:</strong><a href="coolermaster.com" target="_blank"> coolermaster.com</a></li>
+                <li><strong>EVGA 650 GS 650W:</strong><a href="EVGA.com" target="_blank"> EVGA.com</a></li>
+              </ul>
+
+              <h3>Mis elecciones:</h3>
+
+              <h4>Placa madre:</h4>
+              <p>- Usaria la A520M por su sistema modesto, en mi opinion si da una buena calidad no es necesaria que sea "premium" y si con menos costos tengi algo parecido entonces seria la A520M</p>
+
+              <h4>Procesador:</h4>
+              <p>-Desde mi vista elegiria el intel i5-14400F ya que prefiero algo que dure más años y que sea resistente a lo largo de los años</p>
+
+              <h4>Cooler</h4>
+              <p>-Yo elegiria el cooler Master Hyper 212 Bl por que con su precio bajo da una buena calidad y no planeo sobrecargar o sobrexplotar demasiado</p>
+
+              <h4>Memoria RAM</h4>
+              <p>-Elegiria el HikSeni Armor White 16 GB porque considero que sería más eficaz y economico comprar el componente que ya contenga los 16 GB a uno que tengo que comprar dos para alcanzar esa cifra</p>
+
+              <h4>Disco duro:</h4>
+              <p>-Usaria la Vi3000 NVMe por su mejor calidad y su velocidad, prefiero que tenga una buena compatibilidad y más si tiene buena velocidad</p>
+
+              <h4>Gabinete gamer</h4>
+              <p>-En este caso, ya que no se busca estética, elegiría la Zer01 Gaming Pollux</p>
+
+              <h4>Fuente de poder</h4>
+              <p>-Eligira el Master MWE gold 850W por si en un futuro está la posibilidad de expandir el sistema</p>
+
+              <h4>Monitor gamer</h4>
+              <p>-Mi opcion sería el MSI PRO MP243L E14 24¨ FHD 144Hz 1 ms por la fluidez y para aprovechar el 144Hz para el gaming</p>
+
+              <h4>Placa de video</h4>
+              <p>-Eligira Western Digital WD Purple 4TB SATA III ya que no hay mucha diferencia entre los dos Discos Duro</p>
+
+              <h4>Tarjeta gráfica</h4>
+              <p>-Elegiria el Sapphire Pulse Radeon RX 6400 4GB ante su mejor rendimiento térmico</p>
+
+              <h4>Teclado</h4>
+              <p>-Elegiria el geminis RHOD 300 RGB por sus funciones específicas que pueden ayudar en cuanto a la jugabilidad y comodidad</p>
+
+              <h4>Mouse</h4>
+              <p>-Eligiria el Fury Scopper RGB al ofrecer más funciones para el gaming a pesar de su precio</p>
+
+              <h4>Auriculares</h4>
+              <p>-Auriculares elegira el HyperX Cloud II, si no tenemos la cuenta mucho el presupuesto, ante un mejor micrófono y calidad de sonido</p>
+
+              <h3>Preguntas hechas a la IA</h3>
+  
+              <ol>
+                <li>¿Qué función cumple la GPU en una PC gamer?</li>
+                <li>¿Porque es importante la Memoria RAM?</li>
+                <li>¿Cuál es la diferencia entre Motherboard y la memoria RAM?</li>
+              </ol>
+
+              <h3>Respuestas de la IA</h3>
+
+              <h4>1) ¿Qué función cumple la GPU en una PC gamer?</h4>
+              <p>La GPU (Graphics Processing Unit) es el componente especializado en el procesamiento y renderizado de gráficos. Su función principal es ejecutar los cálculos necesarios para generar las imágenes, animaciones y efectos visuales que se muestran en el monitor durante la ejecución de un videojuego o aplicación gráfica. A diferencia del CPU, la GPU está optimizada para realizar operaciones en paralelo, lo que permite manejar grandes volúmenes de datos gráficos en tiempo real. En una PC gamer, la GPU determina la calidad visual, la resolución y la cantidad de cuadros por segundo (FPS), siendo fundamental para lograr un rendimiento fluido y una experiencia visual de alta calidad.</p>
+
+              <h4>2) ¿Por qué es importante la memoria RAM?</h4>
+              <p>La memoria RAM (Random Access Memory) es un tipo de memoria volátil que almacena temporalmente los datos y las instrucciones que el procesador necesita acceder de forma inmediata. Su importancia radica en que permite un acceso rápido a la información, evitando que el sistema deba recurrir constantemente al almacenamiento secundario (como el disco duro o SSD), que es mucho más lento. En una PC gamer, una cantidad y velocidad adecuada de RAM mejora los tiempos de carga, la fluidez del juego y el rendimiento general del sistema, especialmente al ejecutar múltiples procesos simultáneamente.</p>
+
+              <h4>3) ¿Cuál es la diferencia entre la motherboard y la memoria RAM?</h4>
+              <p>La motherboard (placa madre) es el componente principal que conecta y comunica todos los dispositivos de hardware del sistema: CPU, GPU, RAM, almacenamiento, periféricos, entre otros. Actúa como la base física y eléctrica que permite la interacción entre ellos a través de circuitos y buses de datos.</p>
+              <p>En cambio, la memoria RAM es un módulo instalado sobre la motherboard cuya función es almacenar temporalmente la información en uso para que el procesador pueda acceder a ella de manera rápida. En resumen, la motherboard integra y coordina todos los componentes, mientras que la RAM almacena datos temporales para agilizar el procesamiento.</p>
+
+              <h3>Explicaciones en mis propias palabras</h3>
+
+              <p><strong>1)</strong> El GPU sirve para crear imágenes, animaciones y efectos visuales, los cuales hay dentro de los juegos, a gran cantidad, por ejemplo: teniendo las imágenes más detalles sin muchos problemas o errores</p>
+
+              <p><strong>2)</strong> La memoria RAM es importante para guardan información rápidamente y temporal, con más velocidad y que no tenga que ir a otros almacenadores más lentos</p>
+
+              <p><strong>3)</strong> La diferencia entre Motherboard y la memoria RAM es que la motherboard es lo más importante en una computadora ya que con eso funciona todo los demás mientras que la memoria RAM sirve para almacenar datos temporales y llegar a ellos en menor tiempo</p>
+
+              <h3>Capturas de interacción con la IA</h3>
+
+              <div class="galeria-ia">
+                <img src="Imagenes/captura1-Iara.png" alt="Captura ChatGPT">
+                <img src="Imagenes/captura2-Iara.png" alt="Captura ChatGPT">
+                <img src="Imagenes/captura3-Iara.png" alt="Captura ChatGPT">
+              </div>
+
+              <h4>¿Qué memoria RAM es mejor para streamear en Fornite con un presupuesto bajo? (imagen 1)</h4>
+              <p>-Desde mi opinión en este caso estoy de acuerdo ya que la IA menciona que el juego Fornite exige un poco en requisitos en base a la memoria RAM que en este caso solamente serian 16GB como la cifra que siguiere el juego. También por eso se eligió la memoria Hiksemi Armor White que abarca esa cifra de GB</p>
+
+              <h4>¿Para armar desde cero que es mejor una notebook o una computadora de escritorio?</h4>
+              <p><strong>(imagen 2 a la 5)</strong></p>
+              <p>-En este caso la IA deja más a la opinión y gustos de cada persona, considero que acierta en las desventajas de cada una como también en las ventajas. Desde experiencia propia acierta en la parte de las notebooks que son muy difíciles de actualizar como también en el punto que su estabilidad o como dice allí "vida útil" es muy baja si deseas exigirle un poco. Lo cual te limita a muchas cosas, por ejemplo: no poder jugar a un juego que en una computadora de escritorio si dejaría.</p>
+              <p>Pero también acierta en la desventaja de la computadora de escritorio que no es portátil, son demasiados pesadas y al tener tantos cables es muy complicado de mover</p>
+
+              <h3>Imagen generada con IA que represente el proyecto</h3>
+
+              <img src="Imagenes/ImagenIA-Iara.png" alt="Imagen IA">
+
+              <h4>Titulo de la imagen: <em>"A pequeños pasos"</em></h4>
+              <p>En la imagen se ve a una chica con un pequeño set up, pequeño, no tan extravagante pero funcional, pero con futuro por lo que se ve al fondo que comienza a tener otra pantalla, tiene un proyecto para mejorar y seguir.</p>
+              <p>Representa el camino como estudiante de primeros años donde apenas conoces el mundo de la tecnología, comprados de algunos que desde niños ya la conocen, tu a diferencia vas paso a paso, pero con seguridad y construyendo un futuro</p>
+
+              <h3>Conclusiones finales</h3>
+
+              <p><strong>● ¿Cómo te ayudó la IA en este trabajo?</strong></p>
+              <p>-La IA me ayudo bastante, mayormente con el tema de la compatibilidad entre los componentes y saber que componentes tiene en general la computadora, si fue difícil al hacer el cuadro comparativo</p>
+
+              <p><strong>● ¿Detectaste errores o información poco confiable? ¿Cómo lo resolviste?</strong></p>
+              <p>-mayormente no me base en la información de la IA, la mayoría fueron paginas gamer donde allí saque los componentes e información de ellas para compararlas</p>
+
+              <p><strong>● ¿En qué casos preferís buscar información manualmente en lugar de usar IA?</strong></p>
+              <p>-prefiero buscar manualmente en los casos que no conozco los temas, por ejemplo, en tema del valor de los componentes ya que conocía de antemano que la IA se equivoca con eso. Por lo tanto, si me puse a buscarlo manualmente</p>
+            </section>
+            
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECCIÓN INDIVIDUAL: NAHUEL -->
+        <!-- ============================================ -->
+        
+        <div class="integrante-section">
+            <div class="integrante-nombre">📋 Presupuesto de Nahuel Schumacher</div>
+            
+            <section id="trabajo-nahuel">
+            <h2>FICHA TÉCNICA DE PC PARA STREAMING</h2>
+
+            <img src="Imagenes/Fortnite-Nahu.png" alt="Captura ChatGPT">
+  
+            <div class="info-box">
+              <p><strong>Creador de ficha técnica:</strong> Nahuel Schumacher</p>
+              <p><strong>Tipo de PC:</strong> De escritorio</p>
+              <p><strong>Presupuesto:</strong> 1000 dólares (1.300.000 pesos)</p>
+            </div>
+
+            <h3>Lista de componentes</h3>
+  
+            <table>
+              <tr>
+                <th>Componente</th>
+                <th>Modelo/Especificaciones</th>
+                <th>Precio (ARS)</th>
+                <th>Tienda</th>
+              </tr>
+              <tr>
+                <td><strong>Procesador</strong></td>
+                <td>Intel Core i3-10100F CPU @ 3.60GHz</td>
+                <td>116.347</td>
+                <td>Acuario Insumos</td>
+              </tr>
+              <tr>
+                <td><strong>Placa de video</strong></td>
+                <td>GTX 1660 Super ASUS TUF 6GB</td>
+                <td>236.800</td>
+                <td>710tech</td>
+              </tr>
+              <tr>
+                <td><strong>Placa madre</strong></td>
+                <td>ASUS Prime H510M-K</td>
+                <td>75.000</td>
+                <td>Aura Gamer</td>
+              </tr>
+              <tr>
+                <td><strong>Memoria RAM</strong></td>
+                <td>Memoria RAM DDR4 8GB 3200MHz KINGDIAN x2</td>
+                <td>50.200</td>
+                <td>Armytech</td>
+              </tr>
+              <tr>
+                <td><strong>Almacenamiento</strong></td>
+                <td>Disco Rígido HDD 1TB Western Digital Blue</td>
+                <td>70.140</td>
+                <td>Armytech</td>
+              </tr>
+              <tr>
+                <td><strong>Fuente de energía</strong></td>
+                <td>Fuente Thermaltake Smart D2D 600W 80 PLUS</td>
+                <td>76.000</td>
+                <td>Maximus Gaming Hardware</td>
+              </tr>
+              <tr>
+                <td><strong>Gabinete</strong></td>
+                <td>Gabinete Fury Shobo SH4 1 Fan Fixed RGB</td>
+                <td>41.800</td>
+                <td>Maximus Gaming Hardware</td>
+              </tr>
+            </table>
+
+            <h3>Periféricos</h3>
+  
+            <table>
+              <tr>
+                <th>Periférico</th>
+                <th>Modelo</th>
+                <th>Precio (ARS)</th>
+                <th>Tienda</th>
+              </tr>
+              <tr>
+                <td><strong>Mouse y teclado</strong></td>
+                <td>Kit Thermaltake Esports Challenger Combo Español</td>
+                <td>26.700</td>
+                <td>Full H4rd</td>
+              </tr>
+              <tr>
+                <td><strong>Auriculares</strong></td>
+                <td>Razer BlackShark V2 X Wired RZ04-03240100-R3U1</td>
+                <td>82.200</td>
+                <td>Full H4rd</td>
+              </tr>
+              <tr>
+                <td><strong>Cámara</strong></td>
+                <td>Webcam Logitech C920S HD Pro 960-001257</td>
+                <td>122.610</td>
+                <td>Full H4rd</td>
+              </tr>
+              <tr>
+                <td><strong>Monitor</strong></td>
+                <td>Monitor Gamer 24" MSI Pro MP243L E14 FHD 144Hz 1ms HDMI VGA</td>
+                <td>195.991</td>
+                <td>XT-PC</td>
+              </tr>
+              <tr>
+                <td><strong>Sistema operativo</strong></td>
+                <td>Windows 11 (licencia)</td>
+                <td>40.000</td>
+                <td>-</td>
+              </tr>
+            </table>
+
+            <div class="highlight">
+              <p><strong>Precio final:</strong> 1.133.788 pesos</p>
+              <p><strong>Dinero restante:</strong> 166.212 pesos</p>
+            </div>
+
+            <h3>Rendimiento esperado</h3>
+            <ul>
+              <li>Más de 60fps como mínimo</li>
+              <li>Poder jugar como mínimo en calidad media-alta, buscando llegar a jugar en calidad alta o más</li>
+            </ul>
+
+            <h3>Tabla comparativa de IA y justificación de elección de componentes</h3>
+
+            <h4>🖥️ Placa de Video</h4>
+            <table>
+              <tr>
+                <th>Característica</th>
+                <th>GTX 1660 Super ASUS TUF 6GB</th>
+                <th>Radeon RX 6400 4GB Sapphire Pulse LR</th>
+              </tr>
+              <tr>
+                <td><strong>GPU</strong></td>
+                <td>NVIDIA Turing</td>
+                <td>AMD RDNA 2</td>
+              </tr>
+              <tr>
+                <td><strong>Memoria</strong></td>
+                <td>6GB GDDR6, 14 Gbps, 192 bits</td>
+                <td>4GB GDDR6, 18 Gbps, 64 bits</td>
+              </tr>
+              <tr>
+                <td><strong>Reloj Base / Boost</strong></td>
+                <td>1530 MHz / 1815 MHz (Gaming Mode) / 1845 MHz (OC Mode)</td>
+                <td>Hasta 2321 MHz (Boost Clock)</td>
+              </tr>
+              <tr>
+                <td><strong>CUDA / Stream Processors</strong></td>
+                <td>1408</td>
+                <td>768</td>
+              </tr>
+              <tr>
+                <td><strong>Conectores Video</strong></td>
+                <td>1x DVI-D, 1x HDMI 2.0b, 1x DisplayPort 1.4</td>
+                <td>1x HDMI 2.1, 1x DisplayPort 1.4</td>
+              </tr>
+              <tr>
+                <td><strong>Consumo Aproximado</strong></td>
+                <td>125W</td>
+                <td>53W</td>
+              </tr>
+              <tr>
+                <td><strong>Recomendación</strong></td>
+                <td>Ideal para juegos en 1080p con alto rendimiento y mayor VRAM.</td>
+                <td>Adecuada para juegos ligeros o tareas multimedia, con menor consumo energético.</td>
+              </tr>
+            </table>
+
+            <h4>Placa Madre</h4>
+            <table>
+              <tr>
+                <th>Característica</th>
+                <th>ASUS Prime H510M-K (Intel)</th>
+                <th>ASUS Prime A520M-K (AMD)</th>
+              </tr>
+              <tr>
+                <td><strong>Socket</strong></td>
+                <td>LGA 1200 (Intel 10ª y 11ª Gen)</td>
+                <td>AM4 (AMD Ryzen 3000/5000)</td>
+              </tr>
+              <tr>
+                <td><strong>Chipset</strong></td>
+                <td>Intel H510</td>
+                <td>AMD A520</td>
+              </tr>
+              <tr>
+                <td><strong>Memoria RAM</strong></td>
+                <td>2x DDR4 hasta 64GB, 2933 MHz (10ª Gen) / 3200 MHz (11ª Gen)</td>
+                <td>2x DDR4 hasta 64GB, 4600 MHz (OC)</td>
+              </tr>
+              <tr>
+                <td><strong>PCIe</strong></td>
+                <td>1x PCIe 4.0 x16, 1x PCIe 3.0 x16, 2x PCIe 3.0 x1</td>
+                <td>1x PCIe 3.0 x16, 1x PCIe 2.0 x16, 1x PCIe 2.0 x1</td>
+              </tr>
+              <tr>
+                <td><strong>Almacenamiento</strong></td>
+                <td>1x M.2 PCIe 3.0 x4, 4x SATA III</td>
+                <td>1x M.2 PCIe 3.0 x4, 4x SATA III</td>
+              </tr>
+              <tr>
+                <td><strong>Red / Audio</strong></td>
+                <td>Ethernet 1Gb, Realtek ALC887 7.1, HDMI / D-Sub</td>
+                <td>Ethernet 1Gb, Realtek ALC887 7.1, HDMI / D-Sub</td>
+              </tr>
+              <tr>
+                <td><strong>Recomendación</strong></td>
+                <td>Compatible con procesadores Intel, ideal para tareas generales y juegos ligeros.</td>
+                <td>Compatible con procesadores AMD Ryzen, ideal para tareas generales y juegos ligeros.</td>
+              </tr>
+            </table>
+
+            <h4> Fuente de Alimentación</h4>
+            <table>
+              <tr>
+                <th>Característica</th>
+                <th>Thermaltake Smart 600W 80 PLUS</th>
+                <th>Solarmax 650W 80 PLUS Bronze</th>
+              </tr>
+              <tr>
+                <td><strong>Certificación</strong></td>
+                <td>80 PLUS Standard</td>
+                <td>80 PLUS Bronze</td>
+              </tr>
+              <tr>
+                <td><strong>Potencia</strong></td>
+                <td>600W</td>
+                <td>650W</td>
+              </tr>
+              <tr>
+                <td><strong>Ventilador</strong></td>
+                <td>120 mm ultra silencioso</td>
+                <td>120 mm</td>
+              </tr>
+              <tr>
+                <td><strong>Conectores</strong></td>
+                <td>1x 24-pin, 1x 8-pin (4+4), 2x 6+2 PCIe, 4x SATA, 2x IDE</td>
+                <td>1x 24-pin, 2x 8-pin (4+4), 2x 6+2 PCIe, 4x SATA, 2x IDE</td>
+              </tr>
+              <tr>
+                <td><strong>Protecciones</strong></td>
+                <td>OVP, OCP, SCP</td>
+                <td>OVP, OCP, SCP</td>
+              </tr>
+              <tr>
+                <td><strong>Recomendación</strong></td>
+                <td>Adecuada para sistemas de gama media con consumo moderado.</td>
+                <td>Adecuada para sistemas de gama media con consumo moderado.</td>
+              </tr>
+            </table>
+
+            <h3>Fuentes externas</h3>
+
+              <h4>GPUs</h4>
+              <ul>
+                <li><a href="https://www.asus.com/latin/motherboards-components/graphics-cards/tuf-gaming/tuf-gtx1660s-o6g-gaming/techspec/" target="_blank">ASUS TUF GTX 1660S - Especificaciones técnicas</a></li>
+                <li><a href="https://www.sapphiretech.com/en/consumer/pulse-radeon-rx-6400-4g-gddr6" target="_blank">Sapphire Pulse Radeon RX 6400 4G GDDR6</a></li>
+              </ul>
+
+              <h4>Placas madres</h4>
+              <ul>
+                <li><a href="https://www.asus.com/latin/motherboards-components/motherboards/prime/prime-h510m-k/techspec/" target="_blank">ASUS Prime H510M-K - Especificaciones técnicas</a></li>
+                <li><a href="https://www.asus.com/latin/motherboards-components/motherboards/prime/prime-a520m-k/techspec/" target="_blank">ASUS Prime A520M-K - Especificaciones técnicas</a></li>
+              </ul>
+
+              <h4>Fuentes de alimentación</h4>
+              <ul>
+                <li><a href="https://es.thermaltake.com/smart-600w.html" target="_blank">Thermaltake Smart 600W</a></li>
+                <li><a href="https://www.mercadolibre.com.ar/fuente-650w-80plus-bronze-solarmax-650-gamer-certificada-pc-color-negro/p/MLA45688848" target="_blank">Solarmax 650W 80 PLUS Bronze - MercadoLibre</a></li>
+              </ul>
+
+            <h3>Justificación de elección de componentes</h3>
+  
+            <div class="info-box">
+              <p><strong>Placa de video:</strong> Se eligió la GTX 1660 Super debido a que cuenta con NVENC, por lo que tendrá mejor rendimiento a la hora de streamear. La RX 6400 no cuenta con NVENC, por lo que no es muy factible streamear con esta.</p>
+    
+              <p><strong>Placa madre:</strong> Se eligió la ASUS Prime H510M-K debido a que es compatible con procesadores Intel, y en esta PC se decidió darle más importancia al procesador.</p>
+    
+              <p><strong>Fuente de alimentación:</strong> Se eligió la fuente Thermaltake Smart 600W 80 PLUS debido a que tenía un precio más reducido que la fuente Solarmax 650W 80 PLUS Bronze y no se consideró tan necesaria la cantidad de 650 watts, optando por tan solo 600 watts.</p>
+            </div>
+
+            <h3>Interacción con la IA</h3>
+  
+            <h4>Comparación GTX 1660 Super vs RTX 3050</h4>
+
+            <img src="Imagenes/Captura-1_Nahu.png" alt="Captura ChatGPT">
+            <img src="Imagenes/Captura-2_Nahu.png" alt="Captura ChatGPT">
+
+            <p>ChatGPT explica que estas 2 placas de video no son muy distintas una de la otra. Puede que la RTX 3050 cuente con más tecnologías como el ray tracing, pero al fin y al cabo no posee un rendimiento muy distinto de la GTX 1660 Super.</p>
+            <p><strong>Opinión:</strong> Es más conveniente la GTX 1660 Super ya que se puede actualizar a futuro con algo MUCHO mejor y es bastante más barata que la RTX 3050.</p>
+  
+            <h4>Sobre actualizaciones futuras</h4>
+
+            <img src="Imagenes/Captura-3_Nahu.png" alt="Captura ChatGPT">
+            <img src="Imagenes/Captura-4_Nahu.png" alt="Captura ChatGPT">
+
+            <p>Estoy de acuerdo con la IA. Si se desea mejorar la PC a lo largo del tiempo, lo más conveniente sería mejorar el procesador solo o junto a la placa madre para tener un mejor rendimiento con las nuevas tecnologías. Además, al actualizar el procesador estás actualizando aquel componente que procesa TODA la información de la PC. En cambio, actualizando la GPU solamente mejoras aquel componente que procesa los gráficos, dando así seguramente cuello de botella.</p>
+
+            <h3>Resumen técnico</h3>
+  
+            <h4>¿Qué es el NVENC en una GPU?</h4>
+            <p><strong>IA:</strong> NVENC (abreviación de NVIDIA Encoder) es un codificador de vídeo por hardware integrado en las tarjetas gráficas NVIDIA. Su función principal es convertir (codificar) videos o imágenes en movimiento en formato digital comprimido, usando la GPU en lugar del procesador (CPU).</p>
+            <p><strong>Traducción:</strong> En resumen, NVENC se encarga de grabar o transmitir video como un stream sin cargar el procesador porque un chip dedicado dentro de la placa de video.</p>
+  
+            <h4>¿Cómo funciona el dual channel de la memoria RAM?</h4>
+            <p><strong>IA:</strong> El Dual Channel (doble canal) es una tecnología que permite que la memoria RAM y el procesador se comuniquen más rápido al usar dos canales de datos en paralelo en lugar de uno solo. Esto no duplica la velocidad de la RAM, pero sí mejora el rendimiento general del sistema, sobre todo en tareas que requieren mucho acceso a memoria como juegos, edición de video o multitarea.</p>
+            <p><strong>Traducción:</strong> La RAM es como una autopista. Si solo hay una memoria RAM es más propenso a atascarse. Al haber 2 memorias RAM, se crean 2 caminos, por lo que aunque no aumenta la velocidad de la RAM, sí se duplica el ancho de banda, por lo que se accede a la memoria más rápido.</p>
+
+            <h3>Conclusiones finales</h3>
+  
+            <h4>¿Cómo te ayudó la IA en este trabajo?</h4>
+            <p>La IA en este trabajo me ayudó bastante a saber qué componentes son compatibles con otros y en base a distintas preguntas realizadas pude aprender bastante sobre los componentes, más de lo que ya conocía de antemano.</p>
+  
+            <h4>¿Detectaste errores o información poco confiable? ¿Cómo lo resolviste?</h4>
+            <p>Realmente no. De las variadas preguntas que he realizado a la IA al hacer el trabajo no detecté ningún error en la información que me proporcionó la IA.</p>
+  
+            <h4>¿En qué casos preferís buscar información manualmente en lugar de usar IA?</h4>
+            <p>Generalmente siempre trato de buscar información sobre componentes por otros medios como Instagram o YouTube, ya que los "influencers" que proporcionan información siempre es muy acertada. Así que podría decir que casi toda la información la busco manualmente, pero sí le pregunto a la IA si los componentes son compatibles.</p>
+          </section>
+            
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECCIÓN INDIVIDUAL: SANTINO -->
+        <!-- ============================================ -->
+        
+        <div class="integrante-section">
+            <div class="integrante-nombre">📋 Presupuesto de Santino Frutos</div>
+            
+            <section>
+            <h2>Introducción</h2>
+            <p>El presente informe tiene como objetivo elaborar un presupuesto individual para el armado de una computadora destinada al streaming de videojuegos, siguiendo los lineamientos del Trabajo Práctico N° 1 de la cátedra Fundamentos de Computación. Se consideran las necesidades de rendimiento tanto para ejecutar los juegos como para transmitir en vivo en plataformas populares como Twitch o YouTube Gaming, manteniendo un presupuesto máximo de 1000 USD según el tipo de cambio vigente.</p>
+            </section>
+
+            <section>
+              <h2>1. Videojuego seleccionado</h2>
+              <p>El videojuego elegido por el grupo para transmitir es <strong>Fortnite</strong>, un título multijugador en línea en el que hasta 100 jugadores compiten en una isla con el objetivo de ser el último en pie. Combina disparos en tercera persona con la construcción rápida de estructuras, lo que lo hace dinámico y visualmente atractivo para el público en plataformas de streaming.</p>
+              <p>Este juego fue seleccionado porque es popular, liviano en términos de requisitos y muy consumido por la audiencia gamer. Cada partida ofrece acción constante y momentos impredecibles, lo que lo convierte en una excelente elección para generar contenido atractivo.</p>
+            </section>
+
+            <section>
+              <h2>2. Requerimientos técnicos de Fortnite</h2>
+              <p>A continuación, se detallan los requerimientos mínimos y recomendados del juego, junto con los necesarios para realizar streaming fluido en 1080p.</p>
+            <table>
+                <tr>
+                    <th>Nivel</th>
+                    <th>Componente</th>
+                    <th>Especificaciones</th>
+                </tr>
+                <tr>
+                    <td>Mínimos</td>
+                    <td>CPU</td>
+                    <td>Intel Core i3-3225 3.3 GHz</td>
+                </tr>
+                <tr>
+                    <td>Mínimos</td>
+                    <td>RAM</td>
+                    <td>8 GB</td>
+                </tr>
+                <tr>
+                    <td>Mínimos</td>
+                    <td>GPU</td>
+                    <td>Intel HD 4000 / AMD Radeon Vega 8</td>
+                </tr>
+                <tr>
+                    <td>Recomendados</td>
+                    <td>CPU</td>
+                    <td>Intel Core i5-7300U / AMD Ryzen 3 3300U</td>
+                </tr>
+                <tr>
+                    <td>Recomendados</td>
+                    <td>RAM</td>
+                    <td>16 GB</td>
+                </tr>
+                <tr>
+                    <td>Recomendados</td>
+                    <td>GPU</td>
+                    <td>NVIDIA GTX 960 / AMD R9 280</td>
+                </tr>
+                <tr>
+                    <td>Para streaming 1080p</td>
+                    <td>CPU</td>
+                    <td>Intel i3-10100F o superior</td>
+                </tr>
+                <tr>
+                    <td>Para streaming 1080p</td>
+                    <td>GPU</td>
+                    <td>GTX 1660 Super 6 GB VRAM</td>
+                </tr>
+                <tr>
+                    <td>Para streaming 1080p</td>
+                    <td>RAM</td>
+                    <td>16 GB</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>3. Software de streaming utilizado</h2>
+            <div class="info-box">
+                <p><strong>OBS Studio</strong> (Open Broadcaster Software) es el programa seleccionado para realizar la transmisión en vivo. Se trata de una herramienta gratuita, de código abierto y ampliamente utilizada por streamers en todo el mundo. Permite la configuración de escenas, fuentes de video, audio y codificadores, como NVENC o x264, para lograr una transmisión fluida y personalizable. Además, su compatibilidad con plataformas como Twitch, YouTube y Kick la convierte en una opción ideal sin costo de licencia.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Tipo de cambio usado</h2>
+            <p><strong>Dólar blue (venta):</strong> ARS $1.460 / USD 1 (valor tomado de la prensa actual).</p>
+        </section>
+
+        <section>
+            <h2>5. Build A - Referencia XT-PC (componentes sueltos)</h2>
+            <table>
+                <tr>
+                    <th>Componente</th>
+                    <th>Precio (ARS)</th>
+                    <th>Precio (USD)</th>
+                </tr>
+                <tr>
+                    <td>CPU - AMD Ryzen 5 5600X</td>
+                    <td>$246.715,76</td>
+                    <td>$168.82</td>
+                </tr>
+                <tr>
+                    <td>GPU - GeForce RTX 3050 (ASUS DUAL OC)</td>
+                    <td>$372.204,08</td>
+                    <td>$254.96</td>
+                </tr>
+                <tr>
+                    <td>Motherboard - A520</td>
+                    <td>$90.000,00</td>
+                    <td>$61.64</td>
+                </tr>
+                <tr>
+                    <td>RAM - 16 GB DDR4</td>
+                    <td>$70.000,00</td>
+                    <td>$47.95</td>
+                </tr>
+                <tr>
+                    <td>SSD NVMe 1 TB</td>
+                    <td>$80.000,00</td>
+                    <td>$54.79</td>
+                </tr>
+                <tr>
+                    <td>Fuente 650W 80+</td>
+                    <td>$60.000,00</td>
+                    <td>$41.10</td>
+                </tr>
+                <tr>
+                    <td>Gabinete + ventilación</td>
+                    <td>$40.000,00</td>
+                    <td>$27.40</td>
+                </tr>
+            </table>
+            <div class="highlight">
+                <p class="total">Total estimado: ARS $958.919,84 - USD $657 aproximadamente</p>
+                <p><strong>Resumen:</strong> Configuración equilibrada con procesador Ryzen 5 5600X y GPU RTX 3050, adecuada para streaming en 1080p y juegos en calidad media-alta.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Build B - Referencia Armytech (GPU más potente)</h2>
+            <table>
+                <tr>
+                    <th>Componente</th>
+                    <th>Precio (ARS)</th>
+                    <th>Precio (USD)</th>
+                </tr>
+                <tr>
+                    <td>CPU - Ryzen 5600GT</td>
+                    <td>$211.579,88</td>
+                    <td>$144.95</td>
+                </tr>
+                <tr>
+                    <td>GPU - Sapphire RX 7600</td>
+                    <td>$467.844,73</td>
+                    <td>$320.58</td>
+                </tr>
+                <tr>
+                    <td>Motherboard - A520</td>
+                    <td>$90.000,00</td>
+                    <td>$61.64</td>
+                </tr>
+                <tr>
+                    <td>RAM - 16 GB DDR4</td>
+                    <td>$70.000,00</td>
+                    <td>$47.95</td>
+                </tr>
+                <tr>
+                    <td>SSD NVMe 1 TB</td>
+                    <td>$80.000,00</td>
+                    <td>$54.79</td>
+                </tr>
+                <tr>
+                    <td>Fuente 650W 80+</td>
+                    <td>$60.000,00</td>
+                    <td>$41.10</td>
+                </tr>
+                <tr>
+                    <td>Gabinete + ventilación</td>
+                    <td>$40.000,00</td>
+                    <td>$27.40</td>
+                </tr>
+            </table>
+            <div class="highlight">
+                <p class="total">Total estimado: ARS $1.019.424,61 - USD $698 aproximadamente</p>
+                <p><strong>Resumen:</strong> Configuración más potente enfocada en rendimiento gráfico para juegos modernos y transmisión en alta calidad (1080p).</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Comparación y observaciones</h2>
+            <p>Ambas configuraciones cumplen con el presupuesto máximo establecido. La Build A ofrece un equilibrio entre costo y rendimiento, ideal para quienes buscan una PC versátil. Por su parte, la Build B prioriza la potencia gráfica gracias a la GPU RX 7600, resultando más adecuada para quienes priorizan el rendimiento en juegos y streaming de alta calidad.</p>
+        </section>
+
+        <section>
+            <h2>8. Conclusión individual</h2>
+            <p>En función del análisis realizado, la configuración Build B representa la mejor opción si el objetivo principal es obtener el máximo rendimiento posible dentro del presupuesto. No obstante, la Build A se mantiene como una alternativa muy equilibrada y con mayor margen para futuras mejoras. Ambas configuraciones permitirían realizar transmisiones estables a 1080p, cumpliendo los requerimientos del trabajo práctico.</p>
+        </section>
+
+        <section>
+            <h2>9. Interacción con IA</h2>
+            
+            <h3>Comparación de componentes</h3>
+                <img src="Imagenes/Captura-IA-1.png" alt="Captura chat con IA">
+                <img src="Imagenes/Captura-IA-2.png" alt="Captura chat con IA">
+                <img src="Imagenes/Captura-IA-3.png" alt="Captura chat con IA">
+                <img src="Imagenes/Captura-IA-4.png" alt="Captura chat con IA">
+            <h3>Reflexión sobre la comparación Ryzen 5 5600G vs Intel i5-12400</h3>
+            <p>Estoy de acuerdo con la respuesta de la IA, especialmente en que la elección depende de si se usa una GPU dedicada o no. En mi caso, el presupuesto que elaboré incluye una placa de video dedicada (RTX 3050 o RX 7600), por lo que el i5-12400 sería una opción más eficiente para streaming con GPU, tal como la IA menciona. Su rendimiento por núcleo es superior y la compatibilidad con Intel Quick Sync facilita la codificación en OBS, reduciendo la carga en la CPU durante la transmisión. Sin embargo, también coincido en que, si no se cuenta con una GPU, el Ryzen 5 5600G es más conveniente por su gráfica integrada Vega 7, que permite jugar y transmitir sin necesidad de hardware adicional.</p>
+            
+            <h3>Explicación técnica traducida al "lenguaje común"</h3>
+                <img src="Imagenes/Captura-IA-5.png" alt="Captura chat con IA">
+                <img src="Imagenes/Captura-IA-6.png" alt="Captura chat con IA">
+                <img src="Imagenes/Captura-IA-7.png" alt="Captura chat con IA">
+            <h3>Reflexión sobre bitrate y streaming</h3>
+            <p>La explicación me hizo entender que el bitrate es básicamente cuánta información manda mi PC por segundo cuando hago streaming. Es como si fuera el ancho de una manguera: si es chica, pasa poca agua y la imagen se ve fea o pixelada; si es grande, pasa más agua y la imagen se ve clara y fluida.</p>
+            <p>Esto me ayuda a entender que no siempre poner el máximo bitrate es mejor: si mi internet no aguanta, la transmisión se corta o se traba. Por eso hay que equilibrar resolución, FPS y bitrate según la velocidad de subida que tengas. También entendí que el encoder es como la "bolsa" que empaca la información, y el bitrate decide cuánta información entra en esa bolsa por segundo.</p>
+            <p>Esta explicación con IA me sirvió para ver cómo lograr un streaming que se vea bien sin que se caiga por problemas de internet, y por qué hay que ajustar el bitrate según la conexión y la resolución que quiero transmitir.</p>
+            
+            <h3>Imagen generada con IA</h3>
+            <p><strong>Prompt:</strong> "Generá una imagen de un setup de streamer gamer económico transmitiendo Fortnite desde su PC, con luces LED y micrófono."</p>
+                <img src="Imagenes/ImagenIAsetup.png" alt="Setup de streamer gamer">
+            <p>Representa un entorno realista de transmisión pensado para un streamer principiante, coherente con el presupuesto planteado.</p>
+            
+            <h3>Reflexión sobre el uso de IA en el trabajo práctico</h3>
+            <div class="info-box">
+                <p>La inteligencia artificial resultó una herramienta valiosa durante la elaboración de este trabajo, principalmente para comparar componentes técnicos y traducir conceptos especializados a un lenguaje más accesible. Me permitió comprender mejor términos como bitrate, encoder y las diferencias entre procesadores, lo que facilitó la toma de decisiones informadas sobre qué configuración elegir.</p>
+                <p>Sin embargo, identifiqué ciertas limitaciones importantes. Los precios de hardware cambian constantemente en Argentina, y la IA no siempre cuenta con información actualizada sobre disponibilidad local o variaciones del dólar. Además, noté que para validar compatibilidades específicas entre componentes (como motherboards y tipos de RAM), fue necesario contrastar con fuentes especializadas, ya que la IA puede generalizar o no contemplar detalles técnicos regionales.</p>
+                <p>En conclusión, la IA funcionó como un excelente asistente para aprender y organizar información, pero no reemplaza la investigación directa en tiendas locales ni el criterio propio a la hora de armar un presupuesto real. Combinar ambos enfoques resultó la estrategia más efectiva.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Fuentes consultadas</h2>
+            <ul>
+                <li>XT-PC - Listados de componentes y precios (www.xt-pc.com.ar)</li>
+                <li>Armytech - Listados de hardware (www.armytech.com.ar)</li>
+                <li>La Nación / Ámbito - Cotización del dólar blue (ARS $1.460)</li>
+                <li>OBS Studio - Software libre para streaming (obsproject.com)</li>
+            </ul>
+        </section>
+            
+        </div>
+
+        <footer>
+            <p>Universidad Autónoma de Entre Ríos - Facultad de Ciencia y Tecnología</p>
+            <p>Fundamentos de Computación - Trabajo Práctico N° 1</p>
+            <p>Octubre 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
